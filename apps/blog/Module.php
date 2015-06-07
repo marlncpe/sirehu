@@ -6,7 +6,7 @@ use \Phalcon\Mvc\View as View,
 	\Phalcon\Mvc\View\Engine\Volt as VoltEngine,
 	\Phalcon\Loader as Loader,
 	\Phalcon\Mvc\Dispatcher as Dispatcher,
-	\Phalcon\Db\Adapter\Pdo\Mysql as Mysql;
+	\Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
 class Module
 {
@@ -64,11 +64,11 @@ class Module
 		 * Database connection is created based in the parameters defined in the configuration file
 		 */
 		$di->set('db', function() use ($config) {
-			return new Mysql(array(
+			return new DbAdapter(array(
 				"host" => $config->database->host,
 				"username" => $config->database->username,
 				"password" => $config->database->password,
-				"dbname" => $config->database->name
+				"dbname" => $config->database->dbname
 			));
 		});
 

@@ -20,7 +20,13 @@ class Module
 			'Sirehu\Core\Controllers' => __DIR__ . '/controllers/',
 			'Sirehu\Core\Models' => __DIR__ . '/models/',
 		));
-
+		/*
+		$loader->registerDirs(
+			array(
+				__DIR__ . '/apps/plugins/'
+			)
+		);
+		*/
 		$loader->register();
 	}
 
@@ -62,23 +68,15 @@ class Module
 		});
 		/**
 		 * Database connection is created based in the parameters defined in the configuration file
-		 *//*
+		 */
 		$di->set('db', function() use ($config) {
-			return new Mysql(array(
+			return new DbAdapter(array(
 				"host" => $config->database->host,
 				"username" => $config->database->username,
 				"password" => $config->database->password,
 				"dbname" => $config->database->dbname
 			));
-		});*/
-		$di['db'] = function() use ($config) {
-			return new Mysql(array(
-				"host" => $config->database->host,
-				"username" => $config->database->username,
-				"password" => $config->database->password,
-				"dbname" => $config->database->dbname
-			));
-		};
+		});
 
 	}
 
