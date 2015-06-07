@@ -1,10 +1,8 @@
 <?php
 
-namespace Sirehu\Frontend\Models;
+namespace SirehuCoreModels;
 
-use Phalcon\Mvc\Model\Validator\Email as Email;
-
-class CoreDepartments extends \Phalcon\Mvc\Model
+class CoreInfo extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -23,13 +21,25 @@ class CoreDepartments extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    protected $descripcion;
+    protected $direccion;
 
     /**
      *
      * @var string
      */
-    protected $email;
+    protected $correo;
+
+    /**
+     *
+     * @var string
+     */
+    protected $twitter;
+
+    /**
+     *
+     * @var string
+     */
+    protected $facebook;
 
     /**
      *
@@ -70,27 +80,53 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field descripcion
+     * Method to set the value of field direccion
      *
-     * @param string $descripcion
+     * @param string $direccion
      * @return $this
      */
-    public function setDescripcion($descripcion)
+    public function setDireccion($direccion)
     {
-        $this->descripcion = $descripcion;
+        $this->direccion = $direccion;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field email
+     * Method to set the value of field correo
      *
-     * @param string $email
+     * @param string $correo
      * @return $this
      */
-    public function setEmail($email)
+    public function setCorreo($correo)
     {
-        $this->email = $email;
+        $this->correo = $correo;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field twitter
+     *
+     * @param string $twitter
+     * @return $this
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field facebook
+     *
+     * @param string $facebook
+     * @return $this
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
 
         return $this;
     }
@@ -142,23 +178,43 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field descripcion
+     * Returns the value of field direccion
      *
      * @return string
      */
-    public function getDescripcion()
+    public function getDireccion()
     {
-        return $this->descripcion;
+        return $this->direccion;
     }
 
     /**
-     * Returns the value of field email
+     * Returns the value of field correo
      *
      * @return string
      */
-    public function getEmail()
+    public function getCorreo()
     {
-        return $this->email;
+        return $this->correo;
+    }
+
+    /**
+     * Returns the value of field twitter
+     *
+     * @return string
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * Returns the value of field facebook
+     *
+     * @return string
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
     }
 
     /**
@@ -181,28 +237,9 @@ class CoreDepartments extends \Phalcon\Mvc\Model
         return $this->fecha_modificacion;
     }
 
-    /**
-     * Validations and business logic
-     */
-    public function validation()
-    {
-
-        $this->validate(
-            new Email(
-                array(
-                    'field'    => 'email',
-                    'required' => true,
-                )
-            )
-        );
-        if ($this->validationHasFailed() == true) {
-            return false;
-        }
-    }
-
     public function getSource()
     {
-        return 'core_departments';
+        return 'core_info';
     }
 
     /**
@@ -213,8 +250,10 @@ class CoreDepartments extends \Phalcon\Mvc\Model
         return array(
             'id' => 'id', 
             'nombre' => 'nombre', 
-            'descripcion' => 'descripcion', 
-            'email' => 'email', 
+            'direccion' => 'direccion', 
+            'correo' => 'correo', 
+            'twitter' => 'twitter', 
+            'facebook' => 'facebook', 
             'fecha_creacion' => 'fecha_creacion', 
             'fecha_modificacion' => 'fecha_modificacion'
         );
