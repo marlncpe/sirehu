@@ -2,13 +2,12 @@
 
 namespace Sirehu\Blog\Controllers;
 
-
-class IndexController extends ControllerBase
+class PostsController extends \Phalcon\Mvc\Controller
 {
 
     public function indexAction()
     {
-       
+
     }
 
 }
