@@ -7,3 +7,12 @@ dist/
 cache/*.*
 public/web/img/*.*
 public/back/img/*.*
+apps/becas/config/config.php
+apps/blog/config/config.php
+apps/core/config/config.php
+apps/cpanel/config/config.php
+apps/frontend/config/config.php
+apps/galeria/config/config.php
+apps/odontologia/config/config.php
+apps/servimed/config/config.php
+apps/users/config/config.php
