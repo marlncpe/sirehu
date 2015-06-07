@@ -1,6 +1,6 @@
 <?php
 
-namespace SirehuBlogModels;
+namespace Sirehu\Blog\Models;
 
 class BlogTags extends \Phalcon\Mvc\Model
 {
