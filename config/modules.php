@@ -11,7 +11,8 @@ $application->registerModules(array(
 	),
 	'core' => array(
 		'className' => 'Sirehu\Core\Module',
-		'path' => '../apps/core/Module.php'
+		'path' => '../apps/core/Module.php',
+		'shared' => true
 	),
 	'cpanel' => array(
 		'className' => 'Sirehu\Cpanel\Module',

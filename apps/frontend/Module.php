@@ -13,17 +13,17 @@ class Module
 
 	public function registerAutoloaders()
 	{
-		$eventsManager = new \Phalcon\Events\Manager();
+		//$eventsManager = new \Phalcon\Events\Manager();
 		$loader = new Loader();
 
 		$loader->registerNamespaces(array(
 			'Sirehu\Frontend\Controllers' => __DIR__ . '/controllers/',
 			'Sirehu\Frontend\Models' => __DIR__ . '/models/',
-			'Sirehu\Core\Models' => '../apps/core/models',
+			'Sirehu\Core\Models' => dirname(__DIR__) .'/core/models',
 			//'Sirehu\Core\Models' => 'Sirehu\Core\Models',
 		));
 
-
+/*
 		//Listen all the loader events
 		$eventsManager->attach('loader', function($event, $loader) {
 		    if ($event->getType() == 'beforeCheckPath') {
@@ -32,7 +32,7 @@ class Module
 		});
 
 		$loader->setEventsManager($eventsManager);
-
+*/
 		$loader->register();
 	}
 
@@ -80,7 +80,7 @@ class Module
 				"host" => $config->database->host,
 				"username" => $config->database->username,
 				"password" => $config->database->password,
-				"dbname" => $config->database->name
+				"dbname" => $config->database->dbname
 			));
 		});
 
