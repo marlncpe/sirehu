@@ -19,6 +19,12 @@ class BlogPosts extends \Phalcon\Mvc\Model
 
     /**
      *
+     * @var integer
+     */
+    protected $id_category;
+
+    /**
+     *
      * @var string
      */
     protected $titulo;
@@ -87,6 +93,19 @@ class BlogPosts extends \Phalcon\Mvc\Model
     public function setIdUser($id_user)
     {
         $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field id_category
+     *
+     * @param integer $id_category
+     * @return $this
+     */
+    public function setIdCategory($id_category)
+    {
+        $this->id_category = $id_category;
 
         return $this;
     }
@@ -216,6 +235,16 @@ class BlogPosts extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field id_category
+     *
+     * @return integer
+     */
+    public function getIdCategory()
+    {
+        return $this->id_category;
+    }
+
+    /**
      * Returns the value of field titulo
      *
      * @return string
@@ -300,7 +329,10 @@ class BlogPosts extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
+        $this->hasMany('id', 'Sirehu\Blog\Models\BlogComments', 'id_post', array('alias' => 'Blog_comments'));
+        $this->belongsTo('id_status', 'Sirehu\Core\Models\CoreStatus', 'id', array('alias' => 'Core_status'));
         $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
+        $this->belongsTo('id_category', 'Sirehu\Blog\Models\BlogCategories', 'id', array('alias' => 'Blog_categories'));
     }
 
     public function getSource()
@@ -316,6 +348,7 @@ class BlogPosts extends \Phalcon\Mvc\Model
         return array(
             'id' => 'id', 
             'id_user' => 'id_user', 
+            'id_category' => 'id_category', 
             'titulo' => 'titulo', 
             'descripcion' => 'descripcion', 
             'resumen' => 'resumen', 
