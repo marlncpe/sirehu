@@ -1,10 +1,8 @@
 <?php
 
-namespace Sirehu\Frontend\Models;
+namespace SirehuCoreModels;
 
-use Phalcon\Mvc\Model\Validator\Email as Email;
-
-class CoreDepartments extends \Phalcon\Mvc\Model
+class CorePermisos extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -29,19 +27,7 @@ class CoreDepartments extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    protected $email;
-
-    /**
-     *
-     * @var string
-     */
     protected $fecha_creacion;
-
-    /**
-     *
-     * @var string
-     */
-    protected $fecha_modificacion;
 
     /**
      * Method to set the value of field id
@@ -83,19 +69,6 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field email
-     *
-     * @param string $email
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
      * Method to set the value of field fecha_creacion
      *
      * @param string $fecha_creacion
@@ -104,19 +77,6 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     public function setFechaCreacion($fecha_creacion)
     {
         $this->fecha_creacion = $fecha_creacion;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field fecha_modificacion
-     *
-     * @param string $fecha_modificacion
-     * @return $this
-     */
-    public function setFechaModificacion($fecha_modificacion)
-    {
-        $this->fecha_modificacion = $fecha_modificacion;
 
         return $this;
     }
@@ -152,16 +112,6 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
      * Returns the value of field fecha_creacion
      *
      * @return string
@@ -172,37 +122,16 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field fecha_modificacion
-     *
-     * @return string
+     * Initialize method for model.
      */
-    public function getFechaModificacion()
+    public function initialize()
     {
-        return $this->fecha_modificacion;
-    }
-
-    /**
-     * Validations and business logic
-     */
-    public function validation()
-    {
-
-        $this->validate(
-            new Email(
-                array(
-                    'field'    => 'email',
-                    'required' => true,
-                )
-            )
-        );
-        if ($this->validationHasFailed() == true) {
-            return false;
-        }
+        $this->hasMany('id', 'SirehuCoreModels\Core_users', 'id_permiso', array('alias' => 'Core_users'));
     }
 
     public function getSource()
     {
-        return 'core_departments';
+        return 'core_permisos';
     }
 
     /**
@@ -214,9 +143,7 @@ class CoreDepartments extends \Phalcon\Mvc\Model
             'id' => 'id', 
             'nombre' => 'nombre', 
             'descripcion' => 'descripcion', 
-            'email' => 'email', 
-            'fecha_creacion' => 'fecha_creacion', 
-            'fecha_modificacion' => 'fecha_modificacion'
+            'fecha_creacion' => 'fecha_creacion'
         );
     }
 

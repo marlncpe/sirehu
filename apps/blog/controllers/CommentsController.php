@@ -2,15 +2,15 @@
 
 namespace Sirehu\Blog\Controllers;
 
+use Sirehu\Blog\Models\BlogComments;
 
 
-
-class IndexController extends ControllerBase
+class CommentsController extends \Phalcon\Mvc\Controller
 {
 
     public function indexAction()
     {
-       
+
     }
 
 }
