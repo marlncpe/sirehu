@@ -65,18 +65,19 @@
           {% for post in posts %}
             <!-- Blog Post #post.id-->
             <div class="blog">
-              <img src="img/photo-1.jpg" alt="...">
+              <img src="{{ post.core_users.img }}" alt="...">
               <div class="blog-desc">
                 <h3>
                   <a href="blog-post_sidebar-left.html">{{ post.titulo }}.</a>
                 </h3>
                 <hr>
-                <p class="text-muted">Escrito por: Autor Prueba el 18 Mayo del 2014</p>
+                <p class="text-muted">Escrito por: {{ post.core_users.nombres }},{{ post.core_users.apellidos }} el {{ post.fechacreacion }}</p>
                 <p>
-                  {{ post.resumen }}
+                  {{ post.resumen }}...
                 </p>
                 <a class="btn btn-lg btn-theme-primary" href="blog-post_sidebar-left.html">Leer Mas...</a>
-                <a href="blog-post_sidebar-left.html"><img class="img-responsive" src="img/general-3.jpg" alt="..."></a>
+                <br />
+                <br />
                 <p class="blog-tags">
                   <a href="#">Etiqueta 1</a>
                   <a href="#">Etiqueta 2</a>

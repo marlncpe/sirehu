@@ -20,6 +20,7 @@ class Module
 		$loader->registerNamespaces(array(
 			'Sirehu\Blog\Controllers' => __DIR__ . '/controllers/',
 			'Sirehu\Blog\Models' => __DIR__ . '/models/',
+			'Sirehu\Core\Models' => dirname(__DIR__) .'/core/models',
 		));
 
 		$loader->register();

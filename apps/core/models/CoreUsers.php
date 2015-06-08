@@ -1,8 +1,10 @@
 <?php
 
-namespace Sirehu\Blog\Models;
+namespace Sirehu\Core\Models;
 
-class BlogPosts extends \Phalcon\Mvc\Model
+use Phalcon\Mvc\Model\Validator\Email as Email;
+
+class CoreUsers extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -13,39 +15,39 @@ class BlogPosts extends \Phalcon\Mvc\Model
 
     /**
      *
+     * @var string
+     */
+    protected $usuario;
+
+    /**
+     *
+     * @var string
+     */
+    protected $clave;
+
+    /**
+     *
+     * @var string
+     */
+    protected $nombres;
+
+    /**
+     *
+     * @var string
+     */
+    protected $apellidos;
+
+    /**
+     *
+     * @var string
+     */
+    protected $email;
+
+    /**
+     *
      * @var integer
      */
-    protected $id_user;
-
-    /**
-     *
-     * @var string
-     */
-    protected $titulo;
-
-    /**
-     *
-     * @var string
-     */
-    protected $descripcion;
-
-    /**
-     *
-     * @var string
-     */
-    protected $resumen;
-
-    /**
-     *
-     * @var string
-     */
-    protected $tags;
-
-    /**
-     *
-     * @var integer
-     */
-    protected $id_url_img;
+    protected $id_permiso;
 
     /**
      *
@@ -79,79 +81,79 @@ class BlogPosts extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field id_user
+     * Method to set the value of field usuario
      *
-     * @param integer $id_user
+     * @param string $usuario
      * @return $this
      */
-    public function setIdUser($id_user)
+    public function setUsuario($usuario)
     {
-        $this->id_user = $id_user;
+        $this->usuario = $usuario;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field titulo
+     * Method to set the value of field clave
      *
-     * @param string $titulo
+     * @param string $clave
      * @return $this
      */
-    public function setTitulo($titulo)
+    public function setClave($clave)
     {
-        $this->titulo = $titulo;
+        $this->clave = $clave;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field descripcion
+     * Method to set the value of field nombres
      *
-     * @param string $descripcion
+     * @param string $nombres
      * @return $this
      */
-    public function setDescripcion($descripcion)
+    public function setNombres($nombres)
     {
-        $this->descripcion = $descripcion;
+        $this->nombres = $nombres;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field resumen
+     * Method to set the value of field apellidos
      *
-     * @param string $resumen
+     * @param string $apellidos
      * @return $this
      */
-    public function setResumen($resumen)
+    public function setApellidos($apellidos)
     {
-        $this->resumen = $resumen;
+        $this->apellidos = $apellidos;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field tags
+     * Method to set the value of field email
      *
-     * @param string $tags
+     * @param string $email
      * @return $this
      */
-    public function setTags($tags)
+    public function setEmail($email)
     {
-        $this->tags = $tags;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field id_url_img
+     * Method to set the value of field id_permiso
      *
-     * @param integer $id_url_img
+     * @param integer $id_permiso
      * @return $this
      */
-    public function setIdUrlImg($id_url_img)
+    public function setIdPermiso($id_permiso)
     {
-        $this->id_url_img = $id_url_img;
+        $this->id_permiso = $id_permiso;
 
         return $this;
     }
@@ -206,63 +208,63 @@ class BlogPosts extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field id_user
+     * Returns the value of field usuario
+     *
+     * @return string
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Returns the value of field clave
+     *
+     * @return string
+     */
+    public function getClave()
+    {
+        return $this->clave;
+    }
+
+    /**
+     * Returns the value of field nombres
+     *
+     * @return string
+     */
+    public function getNombres()
+    {
+        return $this->nombres;
+    }
+
+    /**
+     * Returns the value of field apellidos
+     *
+     * @return string
+     */
+    public function getApellidos()
+    {
+        return $this->apellidos;
+    }
+
+    /**
+     * Returns the value of field email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Returns the value of field id_permiso
      *
      * @return integer
      */
-    public function getIdUser()
+    public function getIdPermiso()
     {
-        return $this->id_user;
-    }
-
-    /**
-     * Returns the value of field titulo
-     *
-     * @return string
-     */
-    public function getTitulo()
-    {
-        return $this->titulo;
-    }
-
-    /**
-     * Returns the value of field descripcion
-     *
-     * @return string
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
-    }
-
-    /**
-     * Returns the value of field resumen
-     *
-     * @return string
-     */
-    public function getResumen()
-    {
-        return $this->resumen;
-    }
-
-    /**
-     * Returns the value of field tags
-     *
-     * @return string
-     */
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    /**
-     * Returns the value of field id_url_img
-     *
-     * @return integer
-     */
-    public function getIdUrlImg()
-    {
-        return $this->id_url_img;
+        return $this->id_permiso;
     }
 
     /**
@@ -296,16 +298,40 @@ class BlogPosts extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Validations and business logic
+     */
+    public function validation()
+    {
+
+        $this->validate(
+            new Email(
+                array(
+                    'field'    => 'email',
+                    'required' => true,
+                )
+            )
+        );
+        if ($this->validationHasFailed() == true) {
+            return false;
+        }
+    }
+
+    /**
      * Initialize method for model.
      */
     public function initialize()
     {
-        $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
+        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_comments', 'id_user_respuesta', array('alias' => 'Blog_comments'));
+        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_comments', 'id_user', array('alias' => 'Blog_comments'));
+        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_posts', 'id_user', array('alias' => 'Blog_posts'));
+        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_tags', 'id_user', array('alias' => 'Blog_tags'));
+        $this->belongsTo('id_permiso', 'Sirehu\Core\Models\Core_permisos', 'id', array('alias' => 'Core_permisos'));
+        $this->belongsTo('id_status', 'Sirehu\Core\Models\Core_status', 'id', array('alias' => 'Core_status'));
     }
 
     public function getSource()
     {
-        return 'blog_posts';
+        return 'core_users';
     }
 
     /**
@@ -315,12 +341,12 @@ class BlogPosts extends \Phalcon\Mvc\Model
     {
         return array(
             'id' => 'id', 
-            'id_user' => 'id_user', 
-            'titulo' => 'titulo', 
-            'descripcion' => 'descripcion', 
-            'resumen' => 'resumen', 
-            'tags' => 'tags', 
-            'id_url_img' => 'id_url_img', 
+            'usuario' => 'usuario', 
+            'clave' => 'clave', 
+            'nombres' => 'nombres', 
+            'apellidos' => 'apellidos', 
+            'email' => 'email', 
+            'id_permiso' => 'id_permiso', 
             'id_status' => 'id_status', 
             'fecha_creacion' => 'fecha_creacion', 
             'fecha_modificacion' => 'fecha_modificacion'
