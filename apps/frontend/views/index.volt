@@ -45,7 +45,7 @@
               <a href="{{ url('/blog') }}">Blog</a>
             </li>
             <li >
-              <a href="{{ url() }}">Circulares</b></a>
+              <a href="{{ url('/blog/category?category=2') }}">Circulares</b></a>
             </li>
             <li >
             	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cordinaciones<b class="caret"></b></a>

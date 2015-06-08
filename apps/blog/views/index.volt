@@ -45,7 +45,7 @@
               <a href="{{ url('/blog') }}">Blog</a>
             </li>
             <li >
-              <a href="{{ url() }}">Circulares</b></a>
+              <a href="{{ url('/blog/category?category=2') }}">Circulares</b></a>
             </li>
             <li >
             	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cordinaciones<b class="caret"></b></a>
@@ -168,20 +168,19 @@
               </div>
               <div class="panel-body">
                 <ul>
-                  <li><a href="{{ url() }}">Circulares (12)</a></li>
-                  <li><a href="#">Notas (25)</a></li>
-                  <li><a href="#">Notas Duelo (17)</a></li>
-                  <li><a href="#">Felicitaciones (15)</a></li>
-                  <li><a href="#">Agradecimientos (8)</a></li>
+                  <li><a href="{{ url('/blog/category?category=2') }}">Circulares</a></li>
+                  <li><a href="{{ url('/blog/category?category=1') }}">Notas</a></li>
+                  <li><a href="{{ url('/blog/category?category=3') }}">Agradecimientos</a></li>
                 </ul>
               </div>
             </div>
             <!-- Tags -->
+            <!--
             <p class="blog-tags">
               <a href="#">Etiqueta 1</a>
               <a href="#">Etiqueta 2</a>
               <a href="#">Etiqueta 3</a>
-            </p>
+            </p>-->
           </div>
 
    {{ content() }}
