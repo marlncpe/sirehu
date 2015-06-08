@@ -21,10 +21,28 @@ class PostsController extends \Phalcon\Mvc\Controller
 		$this->view->page = $paginator->getPaginate();
     
     }
+
     public function searchidAction(){
     	$currentPost = (int) $_GET["post"];
     	$post = BlogPosts::findFirst("id='".$currentPost."'");
     	$this->view->post = $post;
+    }
+
+    public function categoryidAction(){
+    	
+    	$CategoryPost = (int) $_GET["category"];
+
+		$category = BlogPosts::find("id_category='".$CategoryPost."'");
+
+		$paginator   = new PaginatorModel(
+		    array(
+		        "data"  => $category,
+		        "limit" => 4,
+		        "page"  => $currentPage
+		    )
+		);
+		$this->view->page = $paginator->getPaginate();
+
     }
     /*function myTruncate($string, $limit, $break=”.”, $pad=”…”) { 
 	    if(false !== ($breakpoint = strpos($string, $break, $limit))) { 
