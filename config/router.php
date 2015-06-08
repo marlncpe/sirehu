@@ -30,10 +30,17 @@
 			'controller' => 'posts',
 			'action' => 'index',
 		));
+
 		$router->add("/blog/post", array(
 			'module' => 'blog',
 			'controller' => 'posts',
 			'action' => 'searchid',
+		));
+
+		$router->add("/blog/category", array(
+			'module' => 'blog',
+			'controller' => 'posts',
+			'action' => 'categoryid',
 		));
 		
 		/*

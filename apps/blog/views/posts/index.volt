@@ -76,7 +76,7 @@
                   <p>
                     {{ post.resumen }}...
                   </p>
-                  <a class="btn btn-lg btn-theme-primary" href="blog-post_sidebar-left.html">Leer Mas...</a>
+                  <a class="btn btn-lg btn-theme-primary" href="blog/post?post={{ post.id }}">Leer Mas...</a>
                   <br />
                   <br />
                   <p class="blog-tags">
