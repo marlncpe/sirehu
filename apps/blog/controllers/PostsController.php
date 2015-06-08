@@ -9,26 +9,23 @@ class PostsController extends \Phalcon\Mvc\Controller
 {    
     public function indexAction()
     {
-    	//$this->view->posts = BlogPosts::find();
     	$currentPage = (int) $_GET["page"];
-
-		// The data set to paginate
-		$robots = BlogPosts::find();
-
-		// Create a Model paginator, show 10 rows by page starting from $currentPage
+		$posts = BlogPosts::find();
 		$paginator   = new PaginatorModel(
 		    array(
-		        "data"  => $robots,
+		        "data"  => $posts,
 		        "limit" => 4,
 		        "page"  => $currentPage
 		    )
 		);
-
-		// Get the paginated results
 		$this->view->page = $paginator->getPaginate();
     
     }
-
+    public function searchidAction(){
+    	$currentPost = (int) $_GET["post"];
+    	$post = BlogPosts::findFirst("id='".$currentPost."'");
+    	$this->view->post = $post;
+    }
     /*function myTruncate($string, $limit, $break=”.”, $pad=”…”) { 
 	    if(false !== ($breakpoint = strpos($string, $break, $limit))) { 
 	    	if($breakpoint < strlen($string) – 1) { 

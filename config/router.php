@@ -30,7 +30,7 @@
 			'controller' => 'posts',
 			'action' => 'index',
 		));
-		$router->add("/blog/post/:articleid", array(
+		$router->add("/blog/post", array(
 			'module' => 'blog',
 			'controller' => 'posts',
 			'action' => 'searchid',
