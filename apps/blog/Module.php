@@ -8,6 +8,7 @@ use \Phalcon\Mvc\View as View,
 	\Phalcon\Mvc\Dispatcher as Dispatcher,
 	\Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
+
 class Module
 {
 
@@ -41,7 +42,6 @@ class Module
 		/**
 		 * Setting up the view component
 		 */
-		
 		$di->set('view', function() use ($config) {
 			$view = new View();
 			$view->setViewsDir($config->application->viewsDir);
@@ -54,6 +54,7 @@ class Module
 				        'compiledExtension' => '.compiled',
 				        'compileAlways' => true
 				    ));
+
 				    return $volt;
 		        },
 		        '.phtml' => 'Phalcon\Mvc\View\Engine\Php'

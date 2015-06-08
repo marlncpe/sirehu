@@ -21,7 +21,7 @@
 		*/
 		$router->add("/blog", array(
 			'module' => 'blog',
-			'controller' => 'index',
+			'controller' => 'posts',
 			'action' => 'index',
 		));
 		/*

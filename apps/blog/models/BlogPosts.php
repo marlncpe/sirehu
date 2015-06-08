@@ -33,6 +33,12 @@ class BlogPosts extends \Phalcon\Mvc\Model
      *
      * @var string
      */
+    protected $resumen;
+
+    /**
+     *
+     * @var string
+     */
     protected $tags;
 
     /**
@@ -107,6 +113,19 @@ class BlogPosts extends \Phalcon\Mvc\Model
     public function setDescripcion($descripcion)
     {
         $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field resumen
+     *
+     * @param string $resumen
+     * @return $this
+     */
+    public function setResumen($resumen)
+    {
+        $this->resumen = $resumen;
 
         return $this;
     }
@@ -217,6 +236,16 @@ class BlogPosts extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field resumen
+     *
+     * @return string
+     */
+    public function getResumen()
+    {
+        return $this->resumen;
+    }
+
+    /**
      * Returns the value of field tags
      *
      * @return string
@@ -281,6 +310,7 @@ class BlogPosts extends \Phalcon\Mvc\Model
             'id_user' => 'id_user', 
             'titulo' => 'titulo', 
             'descripcion' => 'descripcion', 
+            'resumen' => 'resumen', 
             'tags' => 'tags', 
             'id_url_img' => 'id_url_img', 
             'id_status' => 'id_status', 
