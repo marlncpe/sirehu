@@ -42,7 +42,7 @@
           <ul class="nav navbar-nav navbar-right">
             
             <li >
-              <a href="{{ url() }}">Blog</a>
+              <a href="{{ url('/blog') }}">Blog</a>
             </li>
             <li >
               <a href="{{ url() }}">Circulares</b></a>

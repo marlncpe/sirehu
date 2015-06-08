@@ -41,8 +41,8 @@
           <a class="btn btn-theme-primary navbar-btn navbar-right hidden-sm hidden-xs">Entrar</a>
           <ul class="nav navbar-nav navbar-right">
             
-            <li >
-              <a href="{{ url() }}">Blog</a>
+            <li class="active">
+              <a href="{{ url('/blog') }}">Blog</a>
             </li>
             <li >
               <a href="{{ url() }}">Circulares</b></a>

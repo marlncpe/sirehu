@@ -24,6 +24,11 @@
 			'controller' => 'posts',
 			'action' => 'index',
 		));
+		$router->add("/blog/search", array(
+			'module' => 'blog',
+			'controller' => 'posts',
+			'action' => 'index',
+		));
 		/*
 		*Routers Core
 		*/

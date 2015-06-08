@@ -62,41 +62,38 @@
             </p>
           </div>
           <div class="col-sm-9">
-          {% for post in posts %}
-            <!-- Blog Post #post.id-->
-            <div class="blog">
-              <img src="{{ post.core_users.img }}" alt="...">
-              <div class="blog-desc">
-                <h3>
-                  <a href="blog-post_sidebar-left.html">{{ post.titulo }}.</a>
-                </h3>
-                <hr>
-                <p class="text-muted">Escrito por: {{ post.core_users.nombres }},{{ post.core_users.apellidos }} el {{ post.fechacreacion }}</p>
-                <p>
-                  {{ post.resumen }}...
-                </p>
-                <a class="btn btn-lg btn-theme-primary" href="blog-post_sidebar-left.html">Leer Mas...</a>
-                <br />
-                <br />
-                <p class="blog-tags">
-                  <a href="#">Etiqueta 1</a>
-                  <a href="#">Etiqueta 2</a>
-                  <a href="#">Etiqueta 3</a>
-                  <a href="#">Etiqueta 4</a>
-                </p>
+          {% if page.items is defined %}
+            {% for post in page.items %}
+              <!-- Blog Post #post.id-->
+              <div class="blog">
+                <img src="{{ post.core_users.img }}" alt="...">
+                <div class="blog-desc">
+                  <h3>
+                    <a href="blog-post_sidebar-left.html">{{ post.titulo }}.</a>
+                  </h3>
+                  <hr>
+                  <p class="text-muted">Escrito por: {{ post.core_users.nombres }},{{ post.core_users.apellidos }} el {{ post.fechacreacion }}</p>
+                  <p>
+                    {{ post.resumen }}...
+                  </p>
+                  <a class="btn btn-lg btn-theme-primary" href="blog-post_sidebar-left.html">Leer Mas...</a>
+                  <br />
+                  <br />
+                  <p class="blog-tags">
+                    <a href="#">{{ post.tags }}</a>
+                  </p>
+                </div>
               </div>
-            </div>
-            <br />
-          {% endfor %}
+              <br />
+            {% endfor %}
+          {% endif %}
             <!-- Pagination -->
             <ul class="pagination pull-right">
-              <li><a href="#">&laquo;</a></li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">&raquo;</a></li>
+              <li class="active">{{ link_to("blog/search", "Primero") }}</li>
+              <li>{{ link_to("blog/search?page="~page.before, "<<") }}</li>
+              <li><a href="#">[{{ page.current~"/"~page.total_pages }}]</a></li>
+              <li>{{ link_to("blog/search?page="~page.next, ">>") }}</li>
+              <li>{{ link_to("blog/search?page="~page.last, "Ultimo") }}</li>
             </ul>
             <div class="clearfix"></div>
           </div>
