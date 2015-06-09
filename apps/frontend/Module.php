@@ -20,7 +20,7 @@ class Module
 			'Sirehu\Frontend\Controllers' => __DIR__ . '/controllers/',
 			'Sirehu\Frontend\Models' => __DIR__ . '/models/',
 			'Sirehu\Core\Models' => dirname(__DIR__) .'/core/models',
-			//'Sirehu\Core\Models' => 'Sirehu\Core\Models',
+			'Sirehu\Blog\Models' => dirname(__DIR__) .'/blog/models',
 		));
 
 /*
