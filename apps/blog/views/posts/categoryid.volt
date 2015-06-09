@@ -14,7 +14,7 @@
                   <p>
                     {{ post.resumen }}...
                   </p>
-                  <a class="btn btn-lg btn-theme-primary" href="blog/post?post={{ post.id }}">Leer Mas...</a>
+                  <a class="btn btn-lg btn-theme-primary" href="{{ url('blog/post?post=post.id') }}">Leer Mas...</a><!--href="blog/post?post={{ post.id }}-->
                   <br />
                   <br />
                   <p class="blog-tags">

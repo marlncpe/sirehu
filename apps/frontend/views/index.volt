@@ -40,12 +40,14 @@
         <div class="collapse navbar-collapse">
           <a class="btn btn-theme-primary navbar-btn navbar-right hidden-sm hidden-xs">Entrar</a>
           <ul class="nav navbar-nav navbar-right">
-            
+            <li class="active">
+              <a href="{{ url('/') }}">Inicio</a>
+            </li>
             <li >
               <a href="{{ url('/blog') }}">Blog</a>
             </li>
             <li >
-              <a href="{{ url() }}">Circulares</b></a>
+              <a href="{{ url('/blog/category?category=2') }}">Circulares</b></a>
             </li>
             <li >
             	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cordinaciones<b class="caret"></b></a>
