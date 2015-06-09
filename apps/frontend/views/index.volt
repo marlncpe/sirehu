@@ -40,7 +40,9 @@
         <div class="collapse navbar-collapse">
           <a class="btn btn-theme-primary navbar-btn navbar-right hidden-sm hidden-xs">Entrar</a>
           <ul class="nav navbar-nav navbar-right">
-            
+            <li class="active">
+              <a href="{{ url('/') }}">Inicio</a>
+            </li>
             <li >
               <a href="{{ url('/blog') }}">Blog</a>
             </li>
