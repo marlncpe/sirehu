@@ -21,9 +21,9 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="home-slider__content">
-                      <h1 class="first-child animated slideInDown delay-2">Powerful Responsive Theme For Business and Personal Projects</h1>
-                      <h3 class="animated slideInDown delay-3">Beautiful Theme That Works Out Of The Box</h3>
-                      <p class="text-muted animated slideInLeft delay-4">Nulla pretium libero interdum, tempus lorem non, rutrum diam. Quisque pellentesque diam sed pulvinar lobortis. <a href="#" id="tooltip" data-toggle="tooltip" data-placement="top" title="Quisque pellentesque diam.">Vestibulum ante ipsum</a> primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                      <h1 class="first-child animated slideInDown delay-2">{{ slider.blog_posts.titulo }}</h1>
+                      <h3 class="animated slideInDown delay-3">Creado por: {{ slider.blog_posts.core_users.nombres }}, {{ slider.blog_posts.core_users.nombres }} el {{ slider.blog_posts.fechacreacion }}</h3>
+                      <p class="text-muted animated slideInLeft delay-4">{{ slider.blog_posts.resumen }}.</p>
                       <a href="#" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">Purchase Now</a>
                     </div>
                   </div>
