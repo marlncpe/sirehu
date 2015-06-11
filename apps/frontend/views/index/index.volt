@@ -24,7 +24,7 @@
                       <h1 class="first-child animated slideInDown delay-2">{{ slider.blog_posts.titulo }}</h1>
                       <h3 class="animated slideInDown delay-3">Creado por: {{ slider.blog_posts.core_users.nombres }}, {{ slider.blog_posts.core_users.nombres }} el {{ slider.blog_posts.fechacreacion }}</h3>
                       <p class="text-muted animated slideInLeft delay-4">{{ slider.blog_posts.resumen }}.</p>
-                      <a href="#" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">Purchase Now</a>
+                      <a href="{{ url('/blog/category?category=') }} {{ slider.blog_posts.id }}" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">leer Más</a>
                     </div>
                   </div>
                 </div> <!-- / .row -->
