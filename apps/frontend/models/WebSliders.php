@@ -1,8 +1,8 @@
 <?php
 
-namespace Sirehu\Core\Models;
+namespace Sirehu\Frontend\Models;
 
-class CoreInfo extends \Phalcon\Mvc\Model
+class WebSliders extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -13,33 +13,21 @@ class CoreInfo extends \Phalcon\Mvc\Model
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    protected $nombre;
+    protected $id_user;
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    protected $direccion;
+    protected $id_post;
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    protected $correo;
-
-    /**
-     *
-     * @var string
-     */
-    protected $twitter;
-
-    /**
-     *
-     * @var string
-     */
-    protected $facebook;
+    protected $id_status;
 
     /**
      *
@@ -67,66 +55,40 @@ class CoreInfo extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field nombre
+     * Method to set the value of field id_user
      *
-     * @param string $nombre
+     * @param integer $id_user
      * @return $this
      */
-    public function setNombre($nombre)
+    public function setIdUser($id_user)
     {
-        $this->nombre = $nombre;
+        $this->id_user = $id_user;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field direccion
+     * Method to set the value of field id_post
      *
-     * @param string $direccion
+     * @param integer $id_post
      * @return $this
      */
-    public function setDireccion($direccion)
+    public function setIdPost($id_post)
     {
-        $this->direccion = $direccion;
+        $this->id_post = $id_post;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field correo
+     * Method to set the value of field id_status
      *
-     * @param string $correo
+     * @param integer $id_status
      * @return $this
      */
-    public function setCorreo($correo)
+    public function setIdStatus($id_status)
     {
-        $this->correo = $correo;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field twitter
-     *
-     * @param string $twitter
-     * @return $this
-     */
-    public function setTwitter($twitter)
-    {
-        $this->twitter = $twitter;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field facebook
-     *
-     * @param string $facebook
-     * @return $this
-     */
-    public function setFacebook($facebook)
-    {
-        $this->facebook = $facebook;
+        $this->id_status = $id_status;
 
         return $this;
     }
@@ -168,53 +130,33 @@ class CoreInfo extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field nombre
+     * Returns the value of field id_user
      *
-     * @return string
+     * @return integer
      */
-    public function getNombre()
+    public function getIdUser()
     {
-        return $this->nombre;
+        return $this->id_user;
     }
 
     /**
-     * Returns the value of field direccion
+     * Returns the value of field id_post
      *
-     * @return string
+     * @return integer
      */
-    public function getDireccion()
+    public function getIdPost()
     {
-        return $this->direccion;
+        return $this->id_post;
     }
 
     /**
-     * Returns the value of field correo
+     * Returns the value of field id_status
      *
-     * @return string
+     * @return integer
      */
-    public function getCorreo()
+    public function getIdStatus()
     {
-        return $this->correo;
-    }
-
-    /**
-     * Returns the value of field twitter
-     *
-     * @return string
-     */
-    public function getTwitter()
-    {
-        return $this->twitter;
-    }
-
-    /**
-     * Returns the value of field facebook
-     *
-     * @return string
-     */
-    public function getFacebook()
-    {
-        return $this->facebook;
+        return $this->id_status;
     }
 
     /**
@@ -237,9 +179,19 @@ class CoreInfo extends \Phalcon\Mvc\Model
         return $this->fecha_modificacion;
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
+        $this->belongsTo('id_post', 'Sirehu\Blog\Models\BlogPosts', 'id', array('alias' => 'Blog_posts'));
+        $this->belongsTo('id_status', 'Sirehu\Core\Models\CoreStatus', 'id', array('alias' => 'Core_status'));
+    }
+
     public function getSource()
     {
-        return 'core_info';
+        return 'web_sliders';
     }
 
     /**
@@ -249,11 +201,9 @@ class CoreInfo extends \Phalcon\Mvc\Model
     {
         return array(
             'id' => 'id', 
-            'nombre' => 'nombre', 
-            'direccion' => 'direccion', 
-            'correo' => 'correo', 
-            'twitter' => 'twitter', 
-            'facebook' => 'facebook', 
+            'id_user' => 'id_user', 
+            'id_post' => 'id_post', 
+            'id_status' => 'id_status', 
             'fecha_creacion' => 'fecha_creacion', 
             'fecha_modificacion' => 'fecha_modificacion'
         );

@@ -10,16 +10,21 @@
           </ol>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
+          {% for slider in sliders %}
             <!-- Slide #1 -->
-            <div class="item active" id="item-1">
+            {% if slider.Core_status.nombre =='principal' %}
+            <div class="item active" id="item-{{ slider.id }}">
+            {% else %}
+            <div class="item " id="item-{{ slider.id }}">
+            {% endif %}  
               <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="home-slider__content">
-                      <h1 class="first-child animated slideInDown delay-2">Powerful Responsive Theme For Business and Personal Projects</h1>
-                      <h3 class="animated slideInDown delay-3">Beautiful Theme That Works Out Of The Box</h3>
-                      <p class="text-muted animated slideInLeft delay-4">Nulla pretium libero interdum, tempus lorem non, rutrum diam. Quisque pellentesque diam sed pulvinar lobortis. <a href="#" id="tooltip" data-toggle="tooltip" data-placement="top" title="Quisque pellentesque diam.">Vestibulum ante ipsum</a> primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                      <a href="#" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">Purchase Now</a>
+                      <h1 class="first-child animated slideInDown delay-2">{{ slider.blog_posts.titulo }}</h1>
+                      <h3 class="animated slideInDown delay-3">Creado por: {{ slider.blog_posts.core_users.nombres }}, {{ slider.blog_posts.core_users.nombres }} el {{ slider.blog_posts.fechacreacion }}</h3>
+                      <p class="text-muted animated slideInLeft delay-4">{{ slider.blog_posts.resumen }}.</p>
+                      <a href="{{ url('/blog/post?post=') }}{{ slider.blog_posts.id }}" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">leer Más</a>
                     </div>
                   </div>
                 </div> <!-- / .row -->
@@ -28,42 +33,7 @@
                 <img src="img/item-1.png" alt="...">
               </div>
             </div> <!-- / .item -->
-            <!-- Slide #2 -->
-            <div class="item" id="item-2">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="home-slider__content">
-                      <h1 class="first-child animated slideInDown delay-2">Powerful Responsive Theme For Business and Personal Projects</h1>
-                      <h3 class="animated slideInDown delay-3">Beautiful Theme That Works Out Of The Box</h3>
-                      <p class="text-muted animated slideInLeft delay-4">Nulla pretium libero interdum, tempus lorem non, rutrum diam. Quisque pellentesque diam sed pulvinar lobortis. <a href="#" id="tooltip" data-toggle="tooltip" data-placement="top" title="Quisque pellentesque diam.">Vestibulum ante ipsum</a> primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                      <a href="#" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">Purchase Now</a>
-                    </div>
-                  </div>
-                </div> <!-- / .row -->
-              </div> <!-- / .container -->
-              <div class="bg-img hidden-xs">
-                <img src="img/item-2.png" alt="...">
-              </div>         
-            </div> <!-- / .item -->
-            <!-- Slide #3 -->
-            <div class="item" id="item-3">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="home-slider__content">
-                      <h1 class="first-child animated slideInDown delay-2">Powerful Responsive Theme For Business and Personal Projects</h1>
-                      <h3 class="animated slideInDown delay-3">Beautiful Theme That Works Out Of The Box</h3>
-                      <p class="text-muted animated slideInLeft delay-4">Nulla pretium libero interdum, tempus lorem non, rutrum diam. Quisque pellentesque diam sed pulvinar lobortis. <a href="#" id="tooltip" data-toggle="tooltip" data-placement="top" title="Quisque pellentesque diam.">Vestibulum ante ipsum</a> primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                      <a href="#" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">Purchase Now</a>
-                    </div>
-                  </div>
-                </div> <!-- / .row -->
-              </div> <!-- / .container -->
-              <div class="bg-img hidden-xs">
-                <img src="img/item-3.png" alt="...">
-              </div>       
-            </div> <!-- / .item -->
+          {% endfor %}
           </div> <!-- / .carousel -->
           <!-- Controls -->
           <a class="carousel-arrow carousel-arrow-prev" href="#home-slider" data-slide="prev">
