@@ -1,6 +1,6 @@
 <?php
 
-namespace SirehuCoreModels;
+namespace Sirehu\Core\Models;
 
 class CorePermisos extends \Phalcon\Mvc\Model
 {
@@ -126,7 +126,7 @@ class CorePermisos extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('id', 'SirehuCoreModels\Core_users', 'id_permiso', array('alias' => 'Core_users'));
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreUsers', 'id_permiso', array('alias' => 'Core_users'));
     }
 
     public function getSource()

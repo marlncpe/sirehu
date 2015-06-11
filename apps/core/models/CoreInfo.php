@@ -1,6 +1,6 @@
 <?php
 
-namespace SirehuCoreModels;
+namespace Sirehu\Core\Models;
 
 class CoreInfo extends \Phalcon\Mvc\Model
 {

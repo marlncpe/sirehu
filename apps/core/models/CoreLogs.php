@@ -1,6 +1,6 @@
 <?php
 
-namespace SirehuCoreModels;
+namespace Sirehu\Core\Models;
 
 class CoreLogs extends \Phalcon\Mvc\Model
 {
