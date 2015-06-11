@@ -169,34 +169,22 @@
           </div>
         </div> <!-- / .row -->
         <div class="row">
+        {% for post in posts %}
           <div class="col-sm-6">
             <div class="blog">
               <img src="img/photo-1.jpg" alt="...">
               <div class="blog-desc">
                 <h3>
-                  <a href="post.html">Ultima Actualizacion en el Blog</a>
+                  <a href="post.html">{{ post.titulo }}</a>
                 </h3>
                 <hr>
-                <p class="text-muted">Escrito por: Autor prueba</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisi lorem, elementum sed feugiat ac, pharetra lacinia mi. Integer iaculis risus sed quam vehicula, sit amet lacinia sem rutrum. Integer ligula orci.</p>
-                <a class="btn btn-lg btn-theme-primary" href="blog-post.html">Leer Mas...</a>
+                <p class="text-muted">Escrito por: {{ post.core_users.nombre }}, {{post.core_users.apellidos }}</p>
+                <p>{{ post.resumen }}</p>
+                <a class="btn btn-lg btn-theme-primary" href="{{ url('/blog/post=')}}{{post.id}}">Leer Mas...</a>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="blog">
-              <img src="img/photo-2.jpg" alt="...">
-              <div class="blog-desc">
-                <h3>
-                  <a href="blog-post.html">Penultima Actualizacion en el Blog.</a>
-                </h3>
-                <hr>
-                <p class="text-muted">Escrito por: Autor Prueba</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisi lorem, elementum sed feugiat ac, pharetra lacinia mi. Integer iaculis risus sed quam vehicula, sit amet lacinia sem rutrum. Integer ligula orci.</p>
-                <a class="btn btn-lg btn-theme-primary" href="blog-post.html">Leer Mas...</a>
-              </div>
-            </div>
-          </div>
+        {% endfor %}
         </div> <!-- / .row -->
       </div> <!-- / .container -->
 
