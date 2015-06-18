@@ -168,12 +168,12 @@
               <br>
               Nuestro compromiso es informarte.
             </p>
-            <form class="form" role="form">
+            {{ form("aulas/create", "method":"post", "enctype":"multipart/form-data") }}  
               <div class="row">
                 <div class="col-sm-8">
                   <div class="input-group">
                     <label class="sr-only" for="subscribe-email">Correo Electronico</label>
-                    <input type="email" class="form-control" id="subscribe-email" placeholder="Correo">
+                    <input type="email" class="form-control" id="subscribe-email" name="correo" placeholder="Correo">
                     <span class="input-group-btn">
                       <button type="submit" class="btn btn-default">OK</button>
                     </span>
