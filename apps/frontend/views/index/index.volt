@@ -76,8 +76,8 @@
           </div> <!-- / .row -->
         </div> <!-- / .container -->
       </div> <!-- / Mision Vision -->
-      <h2 align="center">Cordinaciones que conforman RRHH {{ departaments }}</h2>
-      <!-- cordinaciones -->
+      <h2 align="center">Coordinaciones que conforman RRHH {{ departaments }}</h2>
+      <!-- Coordinaciones -->
       <div class="main-services">
         <div class="container">
           <div class="row">
