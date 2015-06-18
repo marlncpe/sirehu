@@ -168,7 +168,7 @@
               <br>
               Nuestro compromiso es informarte.
             </p>
-            {{ form("aulas/create", "method":"post", "enctype":"multipart/form-data") }}  
+            {{ form("/subscribers", "method":"post", "enctype":"multipart/form-data") }}  
               <div class="row">
                 <div class="col-sm-8">
                   <div class="input-group">
