@@ -69,7 +69,7 @@
 		));
 		$router->add("/subscribers", array(
 			'module' => 'frontend',
-			'controller' => 'index',
+			'controller' => 'subscribers',
 			'action' => 'create',
 		));
 		/*

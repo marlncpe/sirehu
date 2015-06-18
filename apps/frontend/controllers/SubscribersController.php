@@ -31,7 +31,8 @@ class SubscribersController extends ControllerBase
             $this->flash->success("La Solicitud ha sido creada satifactoriamente");
 
             return $this->dispatcher->forward(array(
-                "controller" => "subscribers",
+                "module" => "frontend",
+                "controller" => "index",
                 "action" => "index"
             ));
         }
