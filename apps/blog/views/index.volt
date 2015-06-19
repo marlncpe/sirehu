@@ -54,7 +54,7 @@
             	<ul class="dropdown-menu">
 	                {% for menudepartamento in menudepartamentos %}
                   <li>
-                    <a href="{{ url() }}">{{ menudepartamento.nombre }}</a>
+                    <a href="{{ url('/coordinations?departament=')}}{{menudepartamento.id}}">{{ menudepartamento.nombre }}</a>
                   </li>
                 {% endfor %}
 	            </ul>

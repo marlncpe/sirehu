@@ -17,9 +17,11 @@ class CoordinationsController extends ControllerBase
 
     public function searchAction()
     {
-    	$this->view->coordinacion = CoreDepartments::findFirst("id=1");
-    	$this->view->coordinacioninfos = CoreDepartmentsInfo::find("id=1");
-    	$this->view->coordinacionskills = CoreDepartmentsSkills::find("id=1");
+        parent::index();
+        $departament = (int) $_GET["departament"];
+    	$this->view->coordinacion = CoreDepartments::findFirst("id='".$departament."'");
+    	$this->view->coordinacioninfos = CoreDepartmentsInfo::find("id='".$departament."'");
+    	$this->view->coordinacionskills = CoreDepartmentsSkills::find("id='".$departament."'");
 
     }
 }
