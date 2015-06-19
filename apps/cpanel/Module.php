@@ -19,6 +19,11 @@ class Module
 		$loader->registerNamespaces(array(
 			'Sirehu\Cpanel\Controllers' => __DIR__ . '/controllers/',
 			'Sirehu\Cpanel\Models' => __DIR__ . '/models/',
+			'Sirehu\Frontend\Controllers' =>dirname(__DIR__) . '/frontend/controllers/',
+			'Sirehu\Blog\Controllers' => dirname(__DIR__) .'/blog/controllers',
+			'Sirehu\Frontend\Models' =>dirname(__DIR__) . '/frontend/models/',
+			'Sirehu\Core\Models' => dirname(__DIR__) .'/core/models',
+			'Sirehu\Blog\Models' => dirname(__DIR__) .'/blog/models',
 		));
 
 		$loader->register();
