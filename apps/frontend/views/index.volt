@@ -50,11 +50,13 @@
               <a href="{{ url('/blog/category?category=2') }}">Circulares</b></a>
             </li>
             <li >
-            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cordinaciones<b class="caret"></b></a>
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Coordinaciones<b class="caret"></b></a>
             	<ul class="dropdown-menu">
+                {% for menudepartamento in menudepartamentos %}
 	                <li>
-	                  <a href="{{ url() }}">Cordinaciones</a>
+	                  <a href="{{ url('/coordinations?departament=')}}{{menudepartamento.id}}">{{ menudepartamento.nombre }}</a>
 	                </li>
+                {% endfor %}
 	            </ul>
             </li>
             <li >
@@ -168,12 +170,12 @@
               <br>
               Nuestro compromiso es informarte.
             </p>
-            <form class="form" role="form">
+            {{ form("/subscribers", "method":"post", "enctype":"multipart/form-data") }}  
               <div class="row">
                 <div class="col-sm-8">
                   <div class="input-group">
                     <label class="sr-only" for="subscribe-email">Correo Electronico</label>
-                    <input type="email" class="form-control" id="subscribe-email" placeholder="Correo">
+                    <input type="email" class="form-control" id="subscribe-email" name="correo" placeholder="Correo">
                     <span class="input-group-btn">
                       <button type="submit" class="btn btn-default">OK</button>
                     </span>

@@ -1,8 +1,8 @@
 <?php
 
-namespace Sirehu\Blog\Models;
+namespace Sirehu\Core\Models;
 
-class BlogTags extends \Phalcon\Mvc\Model
+class CoreUsersStaff extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -15,19 +15,19 @@ class BlogTags extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
+    protected $id_department;
+
+    /**
+     *
+     * @var integer
+     */
     protected $id_user;
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    protected $titulo;
-
-    /**
-     *
-     * @var string
-     */
-    protected $descripcion;
+    protected $id_charge;
 
     /**
      *
@@ -49,6 +49,19 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Method to set the value of field id_department
+     *
+     * @param integer $id_department
+     * @return $this
+     */
+    public function setIdDepartment($id_department)
+    {
+        $this->id_department = $id_department;
+
+        return $this;
+    }
+
+    /**
      * Method to set the value of field id_user
      *
      * @param integer $id_user
@@ -62,27 +75,14 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field titulo
+     * Method to set the value of field id_charge
      *
-     * @param string $titulo
+     * @param integer $id_charge
      * @return $this
      */
-    public function setTitulo($titulo)
+    public function setIdCharge($id_charge)
     {
-        $this->titulo = $titulo;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field descripcion
-     *
-     * @param string $descripcion
-     * @return $this
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
+        $this->id_charge = $id_charge;
 
         return $this;
     }
@@ -111,6 +111,16 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field id_department
+     *
+     * @return integer
+     */
+    public function getIdDepartment()
+    {
+        return $this->id_department;
+    }
+
+    /**
      * Returns the value of field id_user
      *
      * @return integer
@@ -121,23 +131,13 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field titulo
+     * Returns the value of field id_charge
      *
-     * @return string
+     * @return integer
      */
-    public function getTitulo()
+    public function getIdCharge()
     {
-        return $this->titulo;
-    }
-
-    /**
-     * Returns the value of field descripcion
-     *
-     * @return string
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
+        return $this->id_charge;
     }
 
     /**
@@ -150,9 +150,19 @@ class BlogTags extends \Phalcon\Mvc\Model
         return $this->fecha_creacion;
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->belongsTo('id_charge', 'Sirehu\Core\Models\CoreCharges', 'id', array('alias' => 'Core_charges'));
+        $this->belongsTo('id_department', 'Sirehu\Core\Models\CoreDepartments', 'id', array('alias' => 'Core_departments'));
+        $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
+    }
+
     public function getSource()
     {
-        return 'blog_tags';
+        return 'core_users_staff';
     }
 
     /**
@@ -162,9 +172,9 @@ class BlogTags extends \Phalcon\Mvc\Model
     {
         return array(
             'id' => 'id', 
+            'id_department' => 'id_department', 
             'id_user' => 'id_user', 
-            'titulo' => 'titulo', 
-            'descripcion' => 'descripcion', 
+            'id_charge' => 'id_charge', 
             'fecha_creacion' => 'fecha_creacion'
         );
     }

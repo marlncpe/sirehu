@@ -67,6 +67,16 @@
 			'controller' => 'index',
 			'action' => 'index',
 		));
+		$router->add("/subscribers", array(
+			'module' => 'frontend',
+			'controller' => 'subscribers',
+			'action' => 'create',
+		));
+		$router->add("/coordinations", array(
+			'module' => 'frontend',
+			'controller' => 'coordinations',
+			'action' => 'search',
+		));
 		/*
 		*Routers Galeria 
 		*/

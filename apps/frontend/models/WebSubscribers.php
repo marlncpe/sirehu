@@ -1,8 +1,8 @@
 <?php
 
-namespace SirehuBlogModels;
+namespace Sirehu\Frontend\Models;
 
-class BlogCategories extends \Phalcon\Mvc\Model
+class WebSubscribers extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -15,13 +15,7 @@ class BlogCategories extends \Phalcon\Mvc\Model
      *
      * @var string
      */
-    protected $nombre;
-
-    /**
-     *
-     * @var string
-     */
-    protected $descripcion;
+    protected $correo;
 
     /**
      *
@@ -43,27 +37,14 @@ class BlogCategories extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field nombre
+     * Method to set the value of field correo
      *
-     * @param string $nombre
+     * @param string $correo
      * @return $this
      */
-    public function setNombre($nombre)
+    public function setCorreo($correo)
     {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field descripcion
-     *
-     * @param string $descripcion
-     * @return $this
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
+        $this->correo = $correo;
 
         return $this;
     }
@@ -92,23 +73,13 @@ class BlogCategories extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field nombre
+     * Returns the value of field correo
      *
      * @return string
      */
-    public function getNombre()
+    public function getCorreo()
     {
-        return $this->nombre;
-    }
-
-    /**
-     * Returns the value of field descripcion
-     *
-     * @return string
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
+        return $this->correo;
     }
 
     /**
@@ -121,17 +92,9 @@ class BlogCategories extends \Phalcon\Mvc\Model
         return $this->fecha_creacion;
     }
 
-    /**
-     * Initialize method for model.
-     */
-    public function initialize()
-    {
-        $this->hasMany('id', 'SirehuBlogModels\Blog_posts', 'id_category', array('alias' => 'Blog_posts'));
-    }
-
     public function getSource()
     {
-        return 'blog_categories';
+        return 'web_subscribers';
     }
 
     /**
@@ -141,8 +104,7 @@ class BlogCategories extends \Phalcon\Mvc\Model
     {
         return array(
             'id' => 'id', 
-            'nombre' => 'nombre', 
-            'descripcion' => 'descripcion', 
+            'correo' => 'correo', 
             'fecha_creacion' => 'fecha_creacion'
         );
     }

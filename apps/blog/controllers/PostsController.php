@@ -5,10 +5,11 @@ namespace Sirehu\Blog\Controllers;
 use Sirehu\Blog\Models\BlogPosts;
 use Phalcon\Paginator\Adapter\Model as PaginatorModel;
 
-class PostsController extends \Phalcon\Mvc\Controller
+class PostsController extends ControllerBase
 {    
     public function indexAction()
     {
+    	parent::index();
     	$currentPage = (int) $_GET["page"];
 		$posts = BlogPosts::find();
 		$paginator   = new PaginatorModel(
@@ -23,13 +24,14 @@ class PostsController extends \Phalcon\Mvc\Controller
     }
 
     public function searchidAction(){
+    	parent::index();
     	$currentPost = (int) $_GET["post"];
     	$post = BlogPosts::findFirst("id='".$currentPost."'");
     	$this->view->post = $post;
     }
 
     public function categoryidAction(){
-    	
+    	parent::index();
     	$CategoryPost = (int) $_GET["category"];
 
 		$category = BlogPosts::find("id_category='".$CategoryPost."'");

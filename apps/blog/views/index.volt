@@ -50,11 +50,13 @@
               <a href="{{ url('/blog/category?category=2') }}">Circulares</b></a>
             </li>
             <li >
-            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cordinaciones<b class="caret"></b></a>
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Coordinaciones<b class="caret"></b></a>
             	<ul class="dropdown-menu">
-	                <li>
-	                  <a href="{{ url() }}">Cordinaciones</a>
-	                </li>
+	                {% for menudepartamento in menudepartamentos %}
+                  <li>
+                    <a href="{{ url('/coordinations?departament=')}}{{menudepartamento.id}}">{{ menudepartamento.nombre }}</a>
+                  </li>
+                {% endfor %}
 	            </ul>
             </li>
             <li >

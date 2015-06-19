@@ -1,8 +1,8 @@
 <?php
 
-namespace Sirehu\Blog\Models;
+namespace Sirehu\Core\Models;
 
-class BlogTags extends \Phalcon\Mvc\Model
+class CoreCharges extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -13,15 +13,9 @@ class BlogTags extends \Phalcon\Mvc\Model
 
     /**
      *
-     * @var integer
-     */
-    protected $id_user;
-
-    /**
-     *
      * @var string
      */
-    protected $titulo;
+    protected $nombre;
 
     /**
      *
@@ -49,27 +43,14 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field id_user
+     * Method to set the value of field nombre
      *
-     * @param integer $id_user
+     * @param string $nombre
      * @return $this
      */
-    public function setIdUser($id_user)
+    public function setNombre($nombre)
     {
-        $this->id_user = $id_user;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field titulo
-     *
-     * @param string $titulo
-     * @return $this
-     */
-    public function setTitulo($titulo)
-    {
-        $this->titulo = $titulo;
+        $this->nombre = $nombre;
 
         return $this;
     }
@@ -111,23 +92,13 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field id_user
-     *
-     * @return integer
-     */
-    public function getIdUser()
-    {
-        return $this->id_user;
-    }
-
-    /**
-     * Returns the value of field titulo
+     * Returns the value of field nombre
      *
      * @return string
      */
-    public function getTitulo()
+    public function getNombre()
     {
-        return $this->titulo;
+        return $this->nombre;
     }
 
     /**
@@ -150,9 +121,17 @@ class BlogTags extends \Phalcon\Mvc\Model
         return $this->fecha_creacion;
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreUsersStaff', 'id_charge', array('alias' => 'Core_users_staff'));
+    }
+
     public function getSource()
     {
-        return 'blog_tags';
+        return 'core_charges';
     }
 
     /**
@@ -162,8 +141,7 @@ class BlogTags extends \Phalcon\Mvc\Model
     {
         return array(
             'id' => 'id', 
-            'id_user' => 'id_user', 
-            'titulo' => 'titulo', 
+            'nombre' => 'nombre', 
             'descripcion' => 'descripcion', 
             'fecha_creacion' => 'fecha_creacion'
         );

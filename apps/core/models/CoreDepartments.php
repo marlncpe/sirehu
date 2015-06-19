@@ -35,6 +35,12 @@ class CoreDepartments extends \Phalcon\Mvc\Model
      *
      * @var string
      */
+    protected $picture;
+
+    /**
+     *
+     * @var string
+     */
     protected $fecha_creacion;
 
     /**
@@ -91,6 +97,19 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field picture
+     *
+     * @param string $picture
+     * @return $this
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
 
         return $this;
     }
@@ -162,6 +181,16 @@ class CoreDepartments extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field picture
+     *
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
      * Returns the value of field fecha_creacion
      *
      * @return string
@@ -200,6 +229,15 @@ class CoreDepartments extends \Phalcon\Mvc\Model
         }
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreDepartmentsInfo', 'id_departament', array('alias' => 'Core_departments_info'));
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreDepartmentsSkills', 'id_departamento', array('alias' => 'Core_departments_skills'));
+    }
+
     public function getSource()
     {
         return 'core_departments';
@@ -215,6 +253,7 @@ class CoreDepartments extends \Phalcon\Mvc\Model
             'nombre' => 'nombre', 
             'descripcion' => 'descripcion', 
             'email' => 'email', 
+            'picture' => 'picture', 
             'fecha_creacion' => 'fecha_creacion', 
             'fecha_modificacion' => 'fecha_modificacion'
         );
