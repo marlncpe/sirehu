@@ -59,64 +59,15 @@
           </div>
         </div> <!-- / .row -->
         <div class="row">
+          {% for staff in staffs %}
           <div class="col-sm-3">
             <div class="user-avatar shadow-effect text-center">
               <img class="img-responsive center-block" src="img/photo-4.jpg" alt="...">
-              John Doe
+              {{ staff.core_users.nombres }}, {{ staff.core_users.apellidos }}
               <p class="text-muted">Founder</p>
             </div>
           </div>
-          <div class="col-sm-3">
-            <div class="user-avatar shadow-effect text-center">
-              <img class="img-responsive center-block" src="img/photo-5.jpg" alt="...">
-              Jane Doe
-              <p class="text-muted">Engineer</p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="user-avatar shadow-effect text-center">
-              <img class="img-responsive center-block" src="img/photo-6.jpg" alt="...">
-              John Doe
-              <p class="text-muted">Sales</p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="user-avatar shadow-effect text-center">
-              <img class="img-responsive center-block" src="img/photo-4.jpg" alt="...">
-              John Doe
-              <p class="text-muted">Admin Team</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="user-avatar shadow-effect text-center">
-              <img class="img-responsive center-block" src="img/photo-4.jpg" alt="...">
-              John Doe
-              <p class="text-muted">Founder</p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="user-avatar shadow-effect text-center">
-              <img class="img-responsive center-block" src="img/photo-5.jpg" alt="...">
-              Jane Doe
-              <p class="text-muted">Engineer</p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="user-avatar shadow-effect text-center">
-              <img class="img-responsive center-block" src="img/photo-6.jpg" alt="...">
-              John Doe
-              <p class="text-muted">Sales</p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="user-avatar shadow-effect text-center">
-              <img class="img-responsive center-block" src="img/photo-4.jpg" alt="...">
-              John Doe
-              <p class="text-muted">Admin Team</p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div> <!-- / .container -->
 

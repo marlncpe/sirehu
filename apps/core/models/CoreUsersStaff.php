@@ -25,6 +25,12 @@ class CoreUsersStaff extends \Phalcon\Mvc\Model
 
     /**
      *
+     * @var integer
+     */
+    protected $id_charge;
+
+    /**
+     *
      * @var string
      */
     protected $fecha_creacion;
@@ -64,6 +70,19 @@ class CoreUsersStaff extends \Phalcon\Mvc\Model
     public function setIdUser($id_user)
     {
         $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field id_charge
+     *
+     * @param integer $id_charge
+     * @return $this
+     */
+    public function setIdCharge($id_charge)
+    {
+        $this->id_charge = $id_charge;
 
         return $this;
     }
@@ -112,6 +131,16 @@ class CoreUsersStaff extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field id_charge
+     *
+     * @return integer
+     */
+    public function getIdCharge()
+    {
+        return $this->id_charge;
+    }
+
+    /**
      * Returns the value of field fecha_creacion
      *
      * @return string
@@ -126,8 +155,9 @@ class CoreUsersStaff extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
+        $this->belongsTo('id_charge', 'Sirehu\Core\Models\CoreCharges', 'id', array('alias' => 'Core_charges'));
         $this->belongsTo('id_department', 'Sirehu\Core\Models\CoreDepartments', 'id', array('alias' => 'Core_departments'));
+        $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
     }
 
     public function getSource()
@@ -144,6 +174,7 @@ class CoreUsersStaff extends \Phalcon\Mvc\Model
             'id' => 'id', 
             'id_department' => 'id_department', 
             'id_user' => 'id_user', 
+            'id_charge' => 'id_charge', 
             'fecha_creacion' => 'fecha_creacion'
         );
     }
