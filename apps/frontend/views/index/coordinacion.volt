@@ -10,7 +10,8 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-md-8 col-md-offset-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit congue porta. Pellentesque ac elit a metus condimentum lobortis a eu odio.
+              <h2>{{ coordinacion.nombre }}</h2><br />
+              {{ coordinacion.descripcion }}
             </div>
           </div> <!-- / .row -->
         </div> <!-- / .container -->
@@ -25,43 +26,28 @@
           </div>
           <div class="col-sm-6">
             <h3 class="headline">
-              <span>Que Ofrecemos en RRHH UNELLEZ</span>
+              <span>Que Ofrecemos</span>
             </h3>
             <p>
               Breve abre boca de lo que ofrecen en RRHH.
             </p>
             <ul class="ft-list">
-              <li>Opcion 1 que ofrece RRHH.</li>
-              <li>Opcion 2 que ofrece RRHH</li>
-              <li>Opcion 3 que ofrece RRHH</li>
-              <li>Opcion 4 que ofrece RRHH</li>
-              <li>Opcion 5 que ofrece RRHH</li>
+              {% for coordinacioninfo in coordinacioninfos %}
+              <li>{{ coordinacioninfo.titulo }}</li>
+              {% endfor %}
             </ul>
           </div>
           <div class="col-sm-6">
             <h3 class="headline">
               <span>Nuestras Habilidades</span>
             </h3>
+            {% for coordinacionskill in coordinacionskills %}
             <div class="progress">
-              <div class="progress-bar progress-bar-theme-secondary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-                Habilidad 1
+              <div class="progress-bar progress-bar-theme-secondary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: {{ coordinacionskill.porcenetaje }}%;">
+               {{ coordinacionskill.nombre }}
               </div>
             </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-theme-secondary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-                Habilidad 2
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar progress-bar-theme-secondary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                Habilidad 3
-              </div>
-            </div>
-              <div class="progress">
-              <div class="progress-bar progress-bar-theme-secondary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                habilidad 4
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div> <!-- / .row -->
         <div class="row">
@@ -69,7 +55,7 @@
             <h2 class="headline-lg">
               Nuestro Equipo
             </h2>
-            <h4>Conoce a Nuestros Jefes de Cordinadciones</h4>
+            <h4>Conoce a Nuestros Trabajadores</h4>
           </div>
         </div> <!-- / .row -->
         <div class="row">

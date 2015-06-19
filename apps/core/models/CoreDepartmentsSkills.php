@@ -1,8 +1,8 @@
 <?php
 
-namespace Sirehu\Blog\Models;
+namespace Sirehu\Core\Models;
 
-class BlogTags extends \Phalcon\Mvc\Model
+class CoreDepartmentsSkills extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -19,15 +19,21 @@ class BlogTags extends \Phalcon\Mvc\Model
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    protected $titulo;
+    protected $id_departamento;
 
     /**
      *
      * @var string
      */
-    protected $descripcion;
+    protected $nombre;
+
+    /**
+     *
+     * @var integer
+     */
+    protected $porcenetaje;
 
     /**
      *
@@ -62,27 +68,40 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Method to set the value of field titulo
+     * Method to set the value of field id_departamento
      *
-     * @param string $titulo
+     * @param integer $id_departamento
      * @return $this
      */
-    public function setTitulo($titulo)
+    public function setIdDepartamento($id_departamento)
     {
-        $this->titulo = $titulo;
+        $this->id_departamento = $id_departamento;
 
         return $this;
     }
 
     /**
-     * Method to set the value of field descripcion
+     * Method to set the value of field nombre
      *
-     * @param string $descripcion
+     * @param string $nombre
      * @return $this
      */
-    public function setDescripcion($descripcion)
+    public function setNombre($nombre)
     {
-        $this->descripcion = $descripcion;
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field porcenetaje
+     *
+     * @param integer $porcenetaje
+     * @return $this
+     */
+    public function setPorcenetaje($porcenetaje)
+    {
+        $this->porcenetaje = $porcenetaje;
 
         return $this;
     }
@@ -121,23 +140,33 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field titulo
+     * Returns the value of field id_departamento
      *
-     * @return string
+     * @return integer
      */
-    public function getTitulo()
+    public function getIdDepartamento()
     {
-        return $this->titulo;
+        return $this->id_departamento;
     }
 
     /**
-     * Returns the value of field descripcion
+     * Returns the value of field nombre
      *
      * @return string
      */
-    public function getDescripcion()
+    public function getNombre()
     {
-        return $this->descripcion;
+        return $this->nombre;
+    }
+
+    /**
+     * Returns the value of field porcenetaje
+     *
+     * @return integer
+     */
+    public function getPorcenetaje()
+    {
+        return $this->porcenetaje;
     }
 
     /**
@@ -150,9 +179,18 @@ class BlogTags extends \Phalcon\Mvc\Model
         return $this->fecha_creacion;
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
+        $this->belongsTo('id_departamento', 'Sirehu\Core\Models\CoreDepartments', 'id', array('alias' => 'Core_departments'));
+    }
+
     public function getSource()
     {
-        return 'blog_tags';
+        return 'core_departments_skills';
     }
 
     /**
@@ -163,8 +201,9 @@ class BlogTags extends \Phalcon\Mvc\Model
         return array(
             'id' => 'id', 
             'id_user' => 'id_user', 
-            'titulo' => 'titulo', 
-            'descripcion' => 'descripcion', 
+            'id_departamento' => 'id_departamento', 
+            'nombre' => 'nombre', 
+            'porcenetaje' => 'porcenetaje', 
             'fecha_creacion' => 'fecha_creacion'
         );
     }

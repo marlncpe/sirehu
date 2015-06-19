@@ -200,6 +200,15 @@ class CoreDepartments extends \Phalcon\Mvc\Model
         }
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreDepartmentsInfo', 'id_departament', array('alias' => 'Core_departments_info'));
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreDepartmentsSkills', 'id_departamento', array('alias' => 'Core_departments_skills'));
+    }
+
     public function getSource()
     {
         return 'core_departments';

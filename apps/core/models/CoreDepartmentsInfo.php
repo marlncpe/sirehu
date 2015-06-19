@@ -1,8 +1,8 @@
 <?php
 
-namespace Sirehu\Blog\Models;
+namespace Sirehu\Core\Models;
 
-class BlogTags extends \Phalcon\Mvc\Model
+class CoreDepartmentsInfo extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -19,15 +19,15 @@ class BlogTags extends \Phalcon\Mvc\Model
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    protected $titulo;
+    protected $id_departament;
 
     /**
      *
      * @var string
      */
-    protected $descripcion;
+    protected $titulo;
 
     /**
      *
@@ -62,6 +62,19 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Method to set the value of field id_departament
+     *
+     * @param integer $id_departament
+     * @return $this
+     */
+    public function setIdDepartament($id_departament)
+    {
+        $this->id_departament = $id_departament;
+
+        return $this;
+    }
+
+    /**
      * Method to set the value of field titulo
      *
      * @param string $titulo
@@ -70,19 +83,6 @@ class BlogTags extends \Phalcon\Mvc\Model
     public function setTitulo($titulo)
     {
         $this->titulo = $titulo;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field descripcion
-     *
-     * @param string $descripcion
-     * @return $this
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
 
         return $this;
     }
@@ -121,6 +121,16 @@ class BlogTags extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field id_departament
+     *
+     * @return integer
+     */
+    public function getIdDepartament()
+    {
+        return $this->id_departament;
+    }
+
+    /**
      * Returns the value of field titulo
      *
      * @return string
@@ -128,16 +138,6 @@ class BlogTags extends \Phalcon\Mvc\Model
     public function getTitulo()
     {
         return $this->titulo;
-    }
-
-    /**
-     * Returns the value of field descripcion
-     *
-     * @return string
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
     }
 
     /**
@@ -150,9 +150,18 @@ class BlogTags extends \Phalcon\Mvc\Model
         return $this->fecha_creacion;
     }
 
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->belongsTo('id_departament', 'Sirehu\Core\Models\CoreDepartments', 'id', array('alias' => 'Core_departments'));
+        $this->belongsTo('id_user', 'Sirehu\Core\Models\CoreUsers', 'id', array('alias' => 'Core_users'));
+    }
+
     public function getSource()
     {
-        return 'blog_tags';
+        return 'core_departments_info';
     }
 
     /**
@@ -163,8 +172,8 @@ class BlogTags extends \Phalcon\Mvc\Model
         return array(
             'id' => 'id', 
             'id_user' => 'id_user', 
+            'id_departament' => 'id_departament', 
             'titulo' => 'titulo', 
-            'descripcion' => 'descripcion', 
             'fecha_creacion' => 'fecha_creacion'
         );
     }

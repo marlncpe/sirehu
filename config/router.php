@@ -75,7 +75,7 @@
 		$router->add("/coordinations", array(
 			'module' => 'frontend',
 			'controller' => 'index',
-			'action' => 'coordinaciones',
+			'action' => 'coordinacion',
 		));
 		/*
 		*Routers Galeria 
