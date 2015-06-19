@@ -64,7 +64,7 @@
             <div class="user-avatar shadow-effect text-center">
               <img class="img-responsive center-block" src="img/photo-4.jpg" alt="...">
               {{ staff.core_users.nombres }}, {{ staff.core_users.apellidos }}
-              <p class="text-muted">Founder</p>
+              <p class="text-muted">{{ staff.Core_charges.nombre }}</p>
             </div>
           </div>
           {% endfor %}
