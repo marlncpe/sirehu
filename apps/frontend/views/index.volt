@@ -52,9 +52,11 @@
             <li >
             	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Coordinaciones<b class="caret"></b></a>
             	<ul class="dropdown-menu">
+                {% for menudepartamento in menudepartamentos %}
 	                <li>
-	                  <a href="{{ url() }}">Coordinaciones</a>
+	                  <a href="{{ url() }}">{{ menudepartamento.nombre }}</a>
 	                </li>
+                {% endfor %}
 	            </ul>
             </li>
             <li >
