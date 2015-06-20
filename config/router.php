@@ -74,6 +74,11 @@
 			'controller' => 'departments',
 			'action' => 'create',
 		));
+		$router->add("/cpanel/departments/search", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'search',
+		));
 		/*
 		*Routers Frontend
 		*/

@@ -4,14 +4,14 @@
                            <div class="col-lg-12">
                               <ol class="breadcrumb">
                                  <li><a href="#">Cpanel</a></li>
-                                 <li class="active"><span>Coordinaciones</span></li>
+                                 <li><a href="#">Coordinaciones</a></li>
+                                 <li><a class="active"><span>{{ department.nombre }}</span></a></li>
                               </ol>
-                              <h1>Todas las Coordinaciones</h1>
+                              <h1>Informacion de {{ department.nombre }}</h1>
                            </div>
                         </div>
                         
                         <div class="row">
-                           {% for department in departments %}
                            <div class="col-lg-4 col-sm-1 col-xs-12">
                               <a href="{{ url('/cpanel/departments/search?id=')}}{{ department.id }}">
                                  <div class="main-box infographic-box blockm">
@@ -23,7 +23,6 @@
                                  </div>
                               </a>
                            </div>
-                           {% endfor %}
                         </div>
                      </div>
                   </div>

@@ -11,7 +11,11 @@ class DepartmentsController extends ControllerBase
     {
         $this->view->departments = CoreDepartments::find();
     }
-
+    public function searchAction()
+    {
+    	$id = (int) $_GET["id"];
+        $this->view->department = CoreDepartments::findFirst("id='".$id."'");
+    }
     public function newAction(){
 
     }
