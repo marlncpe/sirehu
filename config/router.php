@@ -64,6 +64,16 @@
 			'controller' => 'departments',
 			'action' => 'index',
 		));
+		$router->add("/cpanel/departments/add", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/departments/create", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'create',
+		));
 		/*
 		*Routers Frontend
 		*/

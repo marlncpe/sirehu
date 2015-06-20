@@ -16,3 +16,4 @@ apps/galeria/config/config.php
 apps/odontologia/config/config.php
 apps/servimed/config/config.php
 apps/users/config/config.php
+files/*.*
