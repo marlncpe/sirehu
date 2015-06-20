@@ -19,7 +19,12 @@
       <!--{{ stylesheet_link('f="favicon.png" rel="shortcut icon') }}
       <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400" rel="stylesheet" type="text/css">-->
 
-      <style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
+      <style type="text/css">
+      .cf-hidden { display: none; } 
+      .cf-invisible { visibility: hidden; } 
+      .blockm{ height: 120px;} 
+      }
+      </style>
    </head>
    <body class="pace-done theme-red">
       <div class="pace  pace-inactive">

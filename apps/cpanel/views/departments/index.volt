@@ -11,12 +11,14 @@
                         </div>
                         
                         <div class="row">
-                           {% for department in deparments%}
-                           <div class="col-lg-3 col-sm-6 col-xs-12">
-                              <div class="main-box infographic-box">
+                           {% for department in departments %}
+                           <div class="col-lg-4 col-sm-1 col-xs-12">
+                              <div class="main-box infographic-box blockm">
                                  <i class="fa fa-user red-bg"></i>
-                                 <span class="headline">{{ department.nombre }}</span>
-                                 <span class="value">{{ department.email }}</span>
+                                 <span class=""><strong>{{ department.nombre }}</strong></span>
+                                 <br />
+                                 <br />
+                                 <span class="headline" >{{ department.email  }}</span>
                               </div>
                            </div>
                            {% endfor %}
