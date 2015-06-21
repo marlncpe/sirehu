@@ -3,6 +3,8 @@
 namespace Sirehu\Cpanel\Controllers;
 
 use Sirehu\Core\Models\CoreDepartments;
+use Sirehu\Core\Models\CoreDepartmentsInfo;
+
 
 class DepartmentsController extends ControllerBase
 {
@@ -15,6 +17,8 @@ class DepartmentsController extends ControllerBase
     {
     	$id = (int) $_GET["id"];
         $this->view->department = CoreDepartments::findFirst("id='".$id."'");
+        $this->view->departmentinfos = CoreDepartmentsInfo::find("id_departament='".$id."'");
+        
     }
     public function newAction(){
 
@@ -60,5 +64,6 @@ class DepartmentsController extends ControllerBase
             ));
         }
     }
+    
 }
 
