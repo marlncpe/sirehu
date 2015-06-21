@@ -241,6 +241,17 @@
                                  <!--<span class="label label-info label-circle pull-right">28</span>-->
                                  </a>
                               </li>
+                              <li>
+                                 <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-table"></i>
+                                    <span>Departamentos</span>
+                                    <i class="fa fa-chevron-circle-right drop-icon"></i>
+                                 </a>
+                                 <ul class="submenu">
+                                    <li><a href="{{ url('cpanel/departments') }}">Ver Todos</a></li>
+                                    <li><a href="{{ url('cpanel/departments/add') }}">Crear</a></li>
+                                 </ul>
+                              </li>
                              
                               <!--End Menu Options-->
                            </ul>
@@ -249,7 +260,7 @@
                   </section>
                </div>
                <div id="content-wrapper">
-                 {{ content() }}
+                  {{ content() }}
                   <footer id="footer-bar" class="row" style="opacity: 1;">
                      <p id="footer-copyright" class="col-xs-12">
                         © 2014 <a href="http://www.adbee.sk/" target="_blank">Adbee digital</a>. Powered by Centaurus Theme.
