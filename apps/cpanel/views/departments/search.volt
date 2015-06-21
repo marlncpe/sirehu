@@ -12,7 +12,7 @@
                         </div>
                         
                         <div class="row">
-                           <div class="col-lg-4 col-sm-1 col-xs-12">
+                           <div class="col-lg-4 col-sm-4 col-xs-12">
                               <a href="{{ url('/cpanel/departments/search?id=')}}{{ department.id }}">
                                  <div class="main-box infographic-box blockm">
                                     <i class="fa fa-user red-bg"></i>
