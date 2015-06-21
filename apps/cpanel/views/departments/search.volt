@@ -37,7 +37,7 @@
                                           <i class="glyphicon glyphicon-pencil"></i> 
                                        </a> 
                                        &nbsp;&nbsp;
-                                       <a href="">
+                                       <a href="{{ url('cpanel/departments/delete?id=')}}{{ department.id }}">
                                           <i class="glyphicon glyphicon-trash"></i> 
                                        </a>
                                     </p>

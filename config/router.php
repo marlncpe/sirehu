@@ -90,6 +90,11 @@
 			'controller' => 'departments',
 			'action' => 'save',
 		));
+		$router->add("/cpanel/departments/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'delete',
+		));
 		
 		//End Departments
 		/*

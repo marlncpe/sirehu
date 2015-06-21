@@ -145,6 +145,41 @@ class DepartmentsController extends ControllerBase
         ));
 
     }
+    public function deleteAction()
+    {
+        $id = (int) $_GET["id"];
+        $department = CoreDepartments::findFirstByid($id);
+        if (!$department) {
+            $this->flash->error("El departamento no ha sido encontrado");
+
+            return $this->dispatcher->forward(array(
+                "module" => "cpanel",
+                "controller" => "departments",
+                "action" => "index"
+            ));
+        }
+
+        if (!$department->delete()) {
+
+            foreach ($department->getMessages() as $message) {
+                $this->flash->error($message);
+            }
+
+            return $this->dispatcher->forward(array(
+                "module" => "cpanel",
+                "controller" => "departments",
+                "action" => "search"
+            ));
+        }
+
+        $this->flash->success("departamento ha sido borrado satifactoriamente");
+
+        return $this->dispatcher->forward(array(
+            "module" => "cpanel",
+            "controller" => "departments",
+            "action" => "index"
+        ));
+    }
     
 }
 
