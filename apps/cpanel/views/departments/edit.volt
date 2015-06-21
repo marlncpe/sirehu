@@ -21,14 +21,14 @@
                      </header>
                      <div class="main-box-body clearfix">
                            
-                        {{ form("cpanel/departments/create", "method":"post","enctype":"multipart/form-data") }}
+                        {{ form("cpanel/departments/update", "method":"post","enctype":"multipart/form-data") }}
                            <div class="form-group">
                                 <label for="labelnombre">Nombre Departamento</label>                              
                                 {{ text_field("nombre", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre que tendra el Departamento Nuevo a Integrar RRHH") }}
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Departamento</label>
-                              {{ text_area("descripcion", "rows" : 5, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH") }}
+                              {{ text_area("descripcion", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH") }}
                            </div>
                            <div class="form-group">
                               <label for="labelnombre">Email Departamento</label>                              
@@ -36,16 +36,13 @@
                            </div>
                            <div>
                               <label for="labelimagen">Imagen Departamento</label>
-                               {{ text_field("imagen", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Imagen que tendra el Departamento Nuevo a Integrar RRHH") }}                              
-                           </div>
-                           <div>
-                                <label for="labelimagen">Imagen Departamento</label>                              
-                                {{ text_field("fecha", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre que tendra el Departamento Nuevo a Integrar RRHH") }}
+                               {{ file_field("imagen", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Imagen que tendra el Departamento Nuevo a Integrar RRHH") }}                              
                            </div>
                            <div align="center">
                               <br />
                               <button type="submit" class="btn btn-primary">Editar Coordinación</button>
                            </div>
+                           {{ hidden_field("id") }}
                         </form>
                      </div>
                   </div>

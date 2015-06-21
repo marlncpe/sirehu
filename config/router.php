@@ -85,6 +85,12 @@
 			'controller' => 'departments',
 			'action' => 'edit',
 		));
+		$router->add("/cpanel/departments/update", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'save',
+		));
+		
 		//End Departments
 		/*
 		*Routers Frontend
