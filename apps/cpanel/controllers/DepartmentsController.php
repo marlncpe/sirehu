@@ -64,6 +64,33 @@ class DepartmentsController extends ControllerBase
             ));
         }
     }
+    public function editAction()
+    {
+        $id = (int) $_GET["id"];
+        if (!$this->request->isPost()) {
+
+            $department = CoreDepartments::findFirstByid($id);
+            if (!$department) {
+                $this->flash->error("El departamento no ha sido encontrado");
+
+                return $this->dispatcher->forward(array(
+                    "module" => "cpanel",
+                    "controller" => "department",
+                    "action" => "index"
+                ));
+            }
+
+            $this->view->id = $department->id;
+
+            $this->tag->setDefault("id", $department->getId());
+            $this->tag->setDefault("nombre", $department->getNombre());
+            $this->tag->setDefault("descripcion", $department->getDescripcion());
+            $this->tag->setDefault("email", $department->getEmail());
+            $this->tag->setDefault("imagen", $department->getPicture());
+            $this->tag->setDefault("fecha", $department->getFechaCreacion());
+            
+        }
+    }
     
 }
 

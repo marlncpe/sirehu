@@ -33,7 +33,7 @@
                                     <p align="center">
                                        Informacion Detallada
                                        &nbsp;&nbsp;
-                                       <a href="">
+                                       <a href="{{ url('cpanel/departments/edit?id=')}}{{ department.id }}">
                                           <i class="glyphicon glyphicon-pencil"></i> 
                                        </a> 
                                        &nbsp;&nbsp;

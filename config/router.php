@@ -59,6 +59,7 @@
 			'controller' => 'index',
 			'action' => 'index',
 		));
+		//Begin Departments
 		$router->add("/cpanel/departments", array(
 			'module' => 'cpanel',
 			'controller' => 'departments',
@@ -79,6 +80,12 @@
 			'controller' => 'departments',
 			'action' => 'search',
 		));
+		$router->add("/cpanel/departments/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'edit',
+		));
+		//End Departments
 		/*
 		*Routers Frontend
 		*/
