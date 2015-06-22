@@ -134,6 +134,11 @@
 			'controller' => 'charges',
 			'action' => 'new',
 		));
+		$router->add("/cpanel/charges/create", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'create',
+		));
 		$router->add("/cpanel/charges/search", array(
 			'module' => 'cpanel',
 			'controller' => 'charges',

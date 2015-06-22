@@ -28,21 +28,7 @@ class ChargesController extends ControllerBase
         
         $charge->setNombre($this->request->getPost("nombre"));
         $charge->setDescripcion($this->request->getPost("descripcion"));
-        $charge->setEmail($this->request->getPost("email"));
-        if($this->request->hasFiles() == true){
-            $uploads = $this->request->getUploadedFiles();
-            $isUploaded = false;
-            foreach($uploads as $upload){
-
-                $path = 'files/'.md5(uniqid(rand(), true)).'-'.$this->request->getPost("nombre").'';
-                ($upload->moveTo($path)) ? $isUploaded = true : $isUploaded = false;
-           		$charge->setPicture($path);
-            }
-        }else{
-            die('Debe elegir al menos un archivo para enviar. Intente de Nuevo.');
-        }
         $charge->setFechaCreacion(date("d-m-Y"));
-        $charge->setFechaModificacion(" ");
         
         
 
