@@ -166,6 +166,16 @@
 			'controller' => 'blog_posts',
 			'action' => 'index',
 		));
+		$router->add("/cpanel/blog/posts/add", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/blog/posts/create", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'create',
+		));
 		$router->add("/cpanel/blog/posts/search", array(
 			'module' => 'cpanel',
 			'controller' => 'blog_posts',
