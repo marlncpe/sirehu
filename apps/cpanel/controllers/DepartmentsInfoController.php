@@ -86,7 +86,7 @@ class DepartmentsInfoController extends ControllerBase
 
         $department = CoreDepartmentsInfo::findFirstByid($id);
         if (!$department) {
-            $this->flash->error("El departamento no existe " . $id);
+            $this->flash->error("El servicio del departamento no existe " . $id);
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
@@ -95,13 +95,10 @@ class DepartmentsInfoController extends ControllerBase
             ));
         }
 
-        $department->setNombre($this->request->getPost("nombre"));
-        $department->setDescripcion($this->request->getPost("descripcion"));
-        $department->setEmail($this->request->getPost("email", "email"));
-        $department->setPicture($department->getPicture());
+        $department->setIdUser($department->getIdUser());
+        $department->setIdDepartament($department->getIdDepartament());
+        $department->setTitulo($this->request->getPost("titulo"));
         $department->setFechaCreacion($department->getFechaCreacion());
-        $department->setFechaModificacion(date("d-m-Y"));
-        
 
         if (!$department->save()) {
 
@@ -112,12 +109,11 @@ class DepartmentsInfoController extends ControllerBase
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
                 "controller" => "departments",
-                "action" => "edit",
-                "params" => array($department->id)
+                "action" => "edit"
             ));
         }
 
-        $this->flash->success("El departamento fue actualizado con exito");
+        $this->flash->success("El Servicio del departamento fue actualizado con exito");
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",
@@ -131,7 +127,7 @@ class DepartmentsInfoController extends ControllerBase
         $id = (int) $_GET["id"];
         $department = CoreDepartmentsInfo::findFirstByid($id);
         if (!$department) {
-            $this->flash->error("El departamento no ha sido encontrado");
+            $this->flash->error("El servicio del departamento no ha sido encontrado");
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
@@ -153,7 +149,7 @@ class DepartmentsInfoController extends ControllerBase
             ));
         }
 
-        $this->flash->success("departamento ha sido borrado satifactoriamente");
+        $this->flash->success("El servicio del departamento ha sido borrado satifactoriamente");
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",

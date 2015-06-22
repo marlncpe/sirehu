@@ -32,6 +32,7 @@
                               <button type="submit" class="btn btn-primary">Editar Servicio</button>
                            </div>
                            {{ hidden_field("id") }}
+                           
                         </form>
                      </div>
                   </div>
