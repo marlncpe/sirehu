@@ -24,25 +24,17 @@ class BlogPostsController extends ControllerBase
      
         $post = new BlogPosts();
         
-        $post->setNombre($this->request->getPost("nombre"));
+        $post->setIdCategory("1");
+        $post->setIdUser("1");
+        $post->setTitulo($this->request->getPost("titulo"));
+        $post->setResumen($this->request->getPost("resumen"));
         $post->setDescripcion($this->request->getPost("descripcion"));
-        $post->setEmail($this->request->getPost("email"));
-        if($this->request->hasFiles() == true){
-            $uploads = $this->request->getUploadedFiles();
-            $isUploaded = false;
-            foreach($uploads as $upload){
-
-                $path = 'files/'.md5(uniqid(rand(), true)).'-'.$this->request->getPost("nombre").'';
-                ($upload->moveTo($path)) ? $isUploaded = true : $isUploaded = false;
-           		$post->setPicture($path);
-            }
-        }else{
-            die('Debe elegir al menos un archivo para enviar. Intente de Nuevo.');
-        }
+        $post->setTags($this->request->getPost("tags"));
+        $post->setIdUrlImg("0");
+        $post->setIdStatus("1");
         $post->setFechaCreacion(date("d-m-Y"));
         $post->setFechaModificacion(" ");
-        
-        
+            
 
         if (!$post->save()) {
             foreach ($post->getMessages() as $message) {

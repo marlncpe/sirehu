@@ -22,23 +22,19 @@
                         {{ form("cpanel/blog/posts/create", "method":"post") }}
                            <div class="form-group">
                               <label for="labelnombre">Titulo del Articulo</label>                              
-                              <input type="text" class="form-control" name="nombre" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nombre que tendra el Departamento Nuevo a Integrar RRHH">
+                              <input type="text" class="form-control" name="titulo" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nombre que tendra el Articulo ">
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Resumen del Articulo</label>
-                              <textarea class="form-control" name="descripcion" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el Departamento Nuevo a Integrar RRHH"></textarea>
+                              <textarea class="form-control" name="resumen" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Resumen que tendra el Articulo "></textarea>
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Articulo</label>
-                              <textarea class="form-control" name="descripcion" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el Departamento Nuevo a Integrar RRHH"></textarea>
+                              <textarea class="form-control" name="descripcion" rows="8" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el Articulo "></textarea>
                            </div>
                            <div class="form-group">
                               <label for="labelnombre">Etiquetas del Articulo</label>                              
-                              <input type="email" class="form-control" name="email" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Email que tendra el Departamento Nuevo a Integrar RRHH">
-                           </div>
-                           <div>
-                              <label for="labelimagen">Categoria del Articulo</label>                              
-                              <input type="file" class="form-control" name="imagen" data-toggle="tooltip" data-placement="bottom" data-original-title="Imagen que tendra el Departamento Nuevo a Integrar RRHH">
+                              <input type="tags" class="form-control" name="tags" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Etiquetas que tendra el Articulo separadas por comas (,) ">
                            </div>
                            <div align="center">
                               <br />
