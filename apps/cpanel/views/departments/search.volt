@@ -85,7 +85,7 @@
                                                    <i class="glyphicon glyphicon-pencil"></i> 
                                                 </a> 
                                                 &nbsp;&nbsp;
-                                                <a href="">
+                                                <a href="{{ url('/cpanel/departments/information/delete?id=') }}{{ departmentinfo.id }}">
                                                    <i class="glyphicon glyphicon-trash"></i> 
                                                 </a>
                                              </td>
