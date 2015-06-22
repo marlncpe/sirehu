@@ -106,6 +106,16 @@
 			'controller' => 'departments_info',
 			'action' => 'create',
 		));
+		$router->add("/cpanel/departments/information/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/departments/information/update", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'save',
+		));
 		$router->add("/cpanel/departments/information/delete", array(
 			'module' => 'cpanel',
 			'controller' => 'departments_info',

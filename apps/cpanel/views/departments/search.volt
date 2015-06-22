@@ -81,7 +81,7 @@
                                           {% for departmentinfo in departmentinfos %}
                                           <tr>
                                              <td width="35%" align="center">
-                                                <a href="">
+                                                <a href="{{ url('/cpanel/departments/information/edit?id=') }}{{ departmentinfo.id }}">
                                                    <i class="glyphicon glyphicon-pencil"></i> 
                                                 </a> 
                                                 &nbsp;&nbsp;

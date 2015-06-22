@@ -6,9 +6,10 @@
                               <ol class="breadcrumb">
                                  <li><a href="#">Cpanel</a></li>
                                  <li><a href="#">Coordinaciones</a></li>
+                                 <li><a href="#">{{ department.core_departments.nombre }}</a></li>
                                  <li class="active"><span>Editar</span></li>
                               </ol>
-                              <h1>Editar Coordinaciones</h1>
+                              <h1>Editar Servicio</h1>
                            </div>
                         </div>
                      </div>
@@ -21,26 +22,14 @@
                      </header>
                      <div class="main-box-body clearfix">
                            
-                        {{ form("cpanel/departments/update", "method":"post","enctype":"multipart/form-data") }}
+                        {{ form("cpanel/departments/information/update", "method":"post") }}
                            <div class="form-group">
-                                <label for="labelnombre">Nombre Departamento</label>                              
-                                {{ text_field("nombre", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre que tendra el Departamento Nuevo a Integrar RRHH") }}
-                           </div>
-                           <div class="form-group">
-                              <label for="labeldescripcion">Descripcion del Departamento</label>
-                              {{ text_area("descripcion", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH") }}
-                           </div>
-                           <div class="form-group">
-                              <label for="labelnombre">Email Departamento</label>                              
-                              {{ text_field("email", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Email que tendra el Departamento Nuevo a Integrar RRHH") }}
-                           </div>
-                           <div>
-                              <label for="labelimagen">Imagen Departamento</label>
-                               {{ file_field("imagen", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Imagen que tendra el Departamento Nuevo a Integrar RRHH") }}                              
+                              <label for="labeldescripcion">Descripcion del Servicio</label>
+                              {{ text_area("tirulo", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion del servicio que tendra el Departamento de RRHH") }}
                            </div>
                            <div align="center">
                               <br />
-                              <button type="submit" class="btn btn-primary">Editar Coordinación</button>
+                              <button type="submit" class="btn btn-primary">Editar Servicio</button>
                            </div>
                            {{ hidden_field("id") }}
                         </form>
