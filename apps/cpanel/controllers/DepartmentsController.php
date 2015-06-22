@@ -131,8 +131,7 @@ class DepartmentsController extends ControllerBase
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
                 "controller" => "departments_info",
-                "action" => "edit",
-                "params" => array($department->id)
+                "action" => "edit"
             ));
         }
 
