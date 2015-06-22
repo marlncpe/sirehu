@@ -7,14 +7,14 @@
                 <img src="{{ post.core_users.img }}" alt="...">
                 <div class="blog-desc">
                   <h3>
-                    <a href="blog-post_sidebar-left.html">{{ post.titulo }}.</a>
+                    <a href="#">{{ post.titulo }}.</a>
                   </h3>
                   <hr>
                   <p class="text-muted">Escrito por: {{ post.core_users.nombres }},{{ post.core_users.apellidos }} el {{ post.fechacreacion }}</p>
                   <p>
                     {{ post.resumen }}...
                   </p>
-                  <a class="btn btn-lg btn-theme-primary" href="blog/post?post={{ post.id }}">Leer Mas...</a>
+                  <a class="btn btn-lg btn-theme-primary" href="{{ url('blog/post?post=') }}{{ post.id }}">Leer Mas...</a>
                   <br />
                   <br />
                   <p class="blog-tags">
