@@ -55,7 +55,7 @@ class BlogPostsController extends ControllerBase
 
             return $this->dispatcher->forward(array(
             	"module" => "cpanel",
-                "controller" => "posts",
+                "controller" => "blog_posts",
                 "action" => "index",
             ));
         }
@@ -71,7 +71,7 @@ class BlogPostsController extends ControllerBase
 
                 return $this->dispatcher->forward(array(
                     "module" => "cpanel",
-                    "controller" => "post",
+                    "controller" => "blog_posts",
                     "action" => "index"
                 ));
             }
@@ -96,7 +96,7 @@ class BlogPostsController extends ControllerBase
         if (!$this->request->isPost()) {
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
-                "controller" => "posts",
+                "controller" => "blog_posts",
                 "action" => "index"
             ));
         }
@@ -109,18 +109,22 @@ class BlogPostsController extends ControllerBase
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
-                "controller" => "posts",
+                "controller" => "blog_posts",
                 "action" => "index"
             ));
         }
 
-        $post->setNombre($this->request->getPost("nombre"));
+        $post->setIdCategory($post->getIdCategory());
+        $post->setTitulo($this->request->getPost("titulo"));
+        $post->setResumen($this->request->getPost("resumen"));
         $post->setDescripcion($this->request->getPost("descripcion"));
-        $post->setEmail($this->request->getPost("email", "email"));
-        $post->setPicture($post->getPicture());
+        $post->setTags($this->request->getPost("tags"));
+        $post->setIdUrlImg($post->getIdUrlImg());
+        $post->setIdStatus($post->getIdStatus());
         $post->setFechaCreacion($post->getFechaCreacion());
         $post->setFechaModificacion(date("d-m-Y"));
         
+
 
         if (!$post->save()) {
 
@@ -130,7 +134,7 @@ class BlogPostsController extends ControllerBase
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
-                "controller" => "posts_info",
+                "controller" => "blog_posts",
                 "action" => "edit"
             ));
         }
@@ -139,10 +143,10 @@ class BlogPostsController extends ControllerBase
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",
-            "controller" => "posts",
+            "controller" => "blog_posts",
             "action" => "index"
         ));
-
+    
     }
     public function deleteAction()
     {
@@ -153,7 +157,7 @@ class BlogPostsController extends ControllerBase
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
-                "controller" => "posts",
+                "controller" => "blog_posts",
                 "action" => "index"
             ));
         }
@@ -166,7 +170,7 @@ class BlogPostsController extends ControllerBase
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
-                "controller" => "posts",
+                "controller" => "blog_posts",
                 "action" => "search"
             ));
         }
@@ -175,7 +179,7 @@ class BlogPostsController extends ControllerBase
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",
-            "controller" => "posts",
+            "controller" => "blog_posts",
             "action" => "index"
         ));
     }

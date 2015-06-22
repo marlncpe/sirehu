@@ -130,7 +130,7 @@ class DepartmentsController extends ControllerBase
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
-                "controller" => "departments_info",
+                "controller" => "departments",
                 "action" => "edit"
             ));
         }

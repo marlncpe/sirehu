@@ -176,6 +176,11 @@
 			'controller' => 'blog_posts',
 			'action' => 'edit',
 		));
+		$router->add("/cpanel/blog/posts/update", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'save',
+		));
 		//End Administration Blog
 		/*
 		*Routers Frontend
