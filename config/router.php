@@ -154,6 +154,11 @@
 			'controller' => 'charges',
 			'action' => 'save',
 		));
+		$router->add("/cpanel/charges/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'delete',
+		));
 		//End Charges
 		/*
 		*Routers Frontend
