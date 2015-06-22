@@ -263,7 +263,33 @@
                                     <li><a href="{{ url('cpanel/charges/add') }}">Crear</a></li>
                                  </ul>
                               </li>
-                             
+                              <li>
+                                 <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-edit"></i>
+                                    <span>Blog</span>
+                                    <i class="fa fa-chevron-circle-right drop-icon"></i>
+                                 </a>
+                                 <ul class="submenu">
+                            
+                                    <li>
+                                       <a href="#" class="dropdown-toggle">
+                                          Articulos
+                                          <i class="fa fa-chevron-circle-right drop-icon"></i>
+                                       </a>
+                                    <ul class="submenu">
+                                    <li>
+                                       <a href="{{ url('cpanel/blog') }}">
+                                          Ver Todos
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="{{ url('cpanel/blog/posts/add') }}">
+                                          Crear
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </li>
+                                
                               <!--End Menu Options-->
                            </ul>
                         </div>
