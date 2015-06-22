@@ -181,6 +181,11 @@
 			'controller' => 'blog_posts',
 			'action' => 'save',
 		));
+		$router->add("/cpanel/blog/posts/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'delete',
+		));
 		//End Administration Blog
 		/*
 		*Routers Frontend
