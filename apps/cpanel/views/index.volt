@@ -64,12 +64,13 @@
                            <div class="drowdown-search">
                               <form role="search">
                                  <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <input type="text" class="form-control" placeholder="Buscar Departamento...">
                                     <i class="fa fa-search nav-search-icon"></i>
                                  </div>
                               </form>
                            </div>
                         </li>
+                        <!-- si queda tiempo se integran las notificaciones
                         <li class="dropdown hidden-xs">
                            <a class="btn dropdown-toggle" data-toggle="dropdown">
                            <i class="fa fa-warning"></i>
@@ -124,10 +125,11 @@
                               </li>
                            </ul>
                         </li>
+                        -->
                         <li class="dropdown hidden-xs">
                            <a class="btn dropdown-toggle" data-toggle="dropdown">
                            <i class="fa fa-envelope-o"></i>
-                           <span class="count">16</span>
+                           <span class="count">1</span>
                            </a>
                            <ul class="dropdown-menu notifications-list messages-list">
                               <li class="pointer">
@@ -150,36 +152,7 @@
                                  <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
                                  </a>
                               </li>
-                              <li class="item">
-                                 <a href="#">
-                                 <img src="img/samples/messages-photo-2.png" alt=""/>
-                                 <span class="content">
-                                 <span class="content-headline">
-                                 Emma Watson
-                                 </span>
-                                 <span class="content-text">
-                                 Look, just because I don't be givin' no man a foot massage don't make it
-                                 right for Marsellus to throw...
-                                 </span>
-                                 </span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
-                              <li class="item">
-                                 <a href="#">
-                                 <img src="img/samples/messages-photo-3.png" alt=""/>
-                                 <span class="content">
-                                 <span class="content-headline">
-                                 Robert Downey Jr.
-                                 </span>
-                                 <span class="content-text">
-                                 Look, just because I don't be givin' no man a foot massage don't make it
-                                 right for Marsellus to throw...
-                                 </span>
-                                 </span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
+                              
                               <li class="item-footer">
                                  <a href="#">
                                  Ver todos los Mensajes
@@ -187,11 +160,7 @@
                               </li>
                            </ul>
                         </li>
-                        <li class="hidden-xs">
-                           <a class="btn">
-                           <i class="fa fa-cog"></i>
-                           </a>
-                        </li>
+                        
                         <li class="dropdown profile-dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                            <img src="img/samples/scarlet-159.png" alt=""/>
@@ -199,7 +168,6 @@
                            </a>
                            <ul class="dropdown-menu">
                               <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                              <li><a href="#"><i class="fa fa-cog"></i>Configuracion</a></li>
                               <li><a href="#"><i class="fa fa-envelope-o"></i>Mesajes</a></li>
                               <li><a href="#"><i class="fa fa-power-off"></i>Salir</a></li>
                            </ul>
