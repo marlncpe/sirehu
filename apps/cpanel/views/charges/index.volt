@@ -4,9 +4,9 @@
                            <div class="col-lg-12">
                               <ol class="breadcrumb">
                                  <li><a href="#">Cpanel</a></li>
-                                 <li class="active"><span>Coordinaciones</span></li>
+                                 <li class="active"><span>Cargos</span></li>
                               </ol>
-                              <h1>Todas las Coordinaciones</h1>
+                              <h1>Todas los Cargos</h1>
                            </div>
                         </div>
                         

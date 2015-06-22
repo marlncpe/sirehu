@@ -129,6 +129,11 @@
 			'controller' => 'charges',
 			'action' => 'index',
 		));
+		$router->add("/cpanel/charges/add", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'new',
+		));
 		//End Charges
 		/*
 		*Routers Frontend
