@@ -95,7 +95,14 @@
 			'controller' => 'departments',
 			'action' => 'delete',
 		));
+		//Begin Departments Information
+		$router->add("/cpanel/departments/information/add", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'new',
+		));
 		
+		//End Departments Information
 		//End Departments
 		/*
 		*Routers Frontend

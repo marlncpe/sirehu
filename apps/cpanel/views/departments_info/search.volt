@@ -69,13 +69,7 @@
                               <div class="main-box">
                                  <div class="table-responsive">
                                     <br />
-                                    <p align="center">
-                                       ¿Que Ofrecemos? 
-                                       &nbsp;&nbsp;
-                                       <a href="{{ url('/cpanel/departments/information/add?id=') }}{{ department.id }}">
-                                          <i class="glyphicon glyphicon-plus"></i> 
-                                       </a>
-                                    </p>
+                                    <p align="center">¿Que Ofrecemos?</p>
                                     <table id="user" class="table table-hover" style="clear: both">
                                        <tbody>
                                           {% for departmentinfo in departmentinfos %}
