@@ -9,7 +9,7 @@ class PostsController extends ControllerBase
 {    
     public function indexAction()
     {
-    	parent::index();
+    	parent::indexAction();
     	$currentPage = (int) $_GET["page"];
 		$posts = BlogPosts::find();
 		$paginator   = new PaginatorModel(

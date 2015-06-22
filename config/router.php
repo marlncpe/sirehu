@@ -160,6 +160,13 @@
 			'action' => 'delete',
 		));
 		//End Charges
+		//Begin Administration Blog
+		$router->add("/cpanel/blog", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'index',
+		));
+		//End Administration Blog
 		/*
 		*Routers Frontend
 		*/
