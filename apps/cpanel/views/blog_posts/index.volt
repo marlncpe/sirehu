@@ -14,7 +14,7 @@
                         <div class="row">
                            {% for post in posts %}
                            <div class="col-lg-4 col-sm-4 col-xs-12">
-                              <a href="{{ url('/cpanel/posts/search?id=')}}{{ post.id }}">
+                              <a href="{{ url('/cpanel/blog/posts/search?id=')}}{{ post.id }}">
                                  <div class="main-box infographic-box blockm">
                                     {% if post.idcategory == 2 %}
                                     <i class="fa fa-file red-bg"></i>

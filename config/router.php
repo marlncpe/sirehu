@@ -166,6 +166,11 @@
 			'controller' => 'blog_posts',
 			'action' => 'index',
 		));
+		$router->add("/cpanel/blog/posts/search", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'search',
+		));
 		//End Administration Blog
 		/*
 		*Routers Frontend

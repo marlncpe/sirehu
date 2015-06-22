@@ -14,9 +14,7 @@ class BlogPostsController extends ControllerBase
     public function searchAction()
     {
     	$id = (int) $_GET["id"];
-        $this->view->post = BlogPosts::findFirst("id='".$id."'");
-        $this->view->postinfos = BlogPostsInfo::find("id_departament='".$id."'");
-        
+        $this->view->post = BlogPosts::findFirstByid($id);
     }
     public function newAction(){
 
