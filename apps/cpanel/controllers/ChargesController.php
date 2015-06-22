@@ -50,10 +50,10 @@ class ChargesController extends ControllerBase
             foreach ($charge->getMessages() as $message) {
                 $this->flash->error($message);
             }
-            $this->flash->success("El Departamento no ha sido creado");
+            $this->flash->success("El cargo no ha sido creado");
         }else{
 
-            $this->flash->success("El Departamento ha sido creado satifactoriamente");
+            $this->flash->success("El cargo ha sido creado satifactoriamente");
 
             return $this->dispatcher->forward(array(
             	"module" => "cpanel",
@@ -69,7 +69,7 @@ class ChargesController extends ControllerBase
 
             $charge = CoreCharges::findFirstByid($id);
             if (!$charge) {
-                $this->flash->error("El departamento no ha sido encontrado");
+                $this->flash->error("El cargo no ha sido encontrado");
 
                 return $this->dispatcher->forward(array(
                     "module" => "cpanel",
@@ -83,7 +83,6 @@ class ChargesController extends ControllerBase
             $this->tag->setDefault("id", $charge->getId());
             $this->tag->setDefault("nombre", $charge->getNombre());
             $this->tag->setDefault("descripcion", $charge->getDescripcion());
-            $this->tag->setDefault("email", $charge->getEmail());
             $this->tag->setDefault("fecha", $charge->getFechaCreacion());
             
         }
@@ -103,7 +102,7 @@ class ChargesController extends ControllerBase
 
         $charge = CoreCharges::findFirstByid($id);
         if (!$charge) {
-            $this->flash->error("El departamento no existe " . $id);
+            $this->flash->error("El cargo no existe " . $id);
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
@@ -114,10 +113,7 @@ class ChargesController extends ControllerBase
 
         $charge->setNombre($this->request->getPost("nombre"));
         $charge->setDescripcion($this->request->getPost("descripcion"));
-        $charge->setEmail($this->request->getPost("email", "email"));
-        $charge->setPicture($charge->getPicture());
         $charge->setFechaCreacion($charge->getFechaCreacion());
-        $charge->setFechaModificacion(date("d-m-Y"));
         
 
         if (!$charge->save()) {
@@ -128,12 +124,12 @@ class ChargesController extends ControllerBase
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
-                "controller" => "charges_info",
+                "controller" => "charges",
                 "action" => "edit"
             ));
         }
 
-        $this->flash->success("El departamento fue actualizado con exito");
+        $this->flash->success("El cargo fue actualizado con exito");
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",
@@ -147,7 +143,7 @@ class ChargesController extends ControllerBase
         $id = (int) $_GET["id"];
         $charge = CoreCharges::findFirstByid($id);
         if (!$charge) {
-            $this->flash->error("El departamento no ha sido encontrado");
+            $this->flash->error("El cargo no ha sido encontrado");
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
@@ -169,7 +165,7 @@ class ChargesController extends ControllerBase
             ));
         }
 
-        $this->flash->success("departamento ha sido borrado satifactoriamente");
+        $this->flash->success("cargo ha sido borrado satifactoriamente");
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",

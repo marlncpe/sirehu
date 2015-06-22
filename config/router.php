@@ -139,6 +139,16 @@
 			'controller' => 'charges',
 			'action' => 'search',
 		));
+		$router->add("/cpanel/charges/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/charges/update", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'save',
+		));
 		//End Charges
 		/*
 		*Routers Frontend
