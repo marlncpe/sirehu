@@ -79,11 +79,15 @@ class BlogPostsController extends ControllerBase
             $this->view->id = $post->id;
 
             $this->tag->setDefault("id", $post->getId());
-            $this->tag->setDefault("nombre", $post->getNombre());
+            $this->tag->setDefault("id_category", $post->getIdCategory());
+            $this->tag->setDefault("titulo", $post->getTitulo());
             $this->tag->setDefault("descripcion", $post->getDescripcion());
-            $this->tag->setDefault("email", $post->getEmail());
+            $this->tag->setDefault("resumen", $post->getResumen());
+            $this->tag->setDefault("tags", $post->getTags());
+            $this->tag->setDefault("urlimg", $post->getIdUrlImg());
+            $this->tag->setDefault("status", $post->getIdStatus());
             $this->tag->setDefault("fecha", $post->getFechaCreacion());
-            
+ 
         }
     }
     public function saveAction()

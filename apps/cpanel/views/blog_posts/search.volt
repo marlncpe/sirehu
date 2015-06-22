@@ -20,11 +20,11 @@
                                     <p align="center">
                                        Informacion Detallada del Articulo
                                        &nbsp;&nbsp;
-                                       <a href="{{ url('cpanel/posts/edit?id=')}}{{ post.id }}">
+                                       <a href="{{ url('cpanel/blog/posts/edit?id=')}}{{ post.id }}">
                                           <i class="glyphicon glyphicon-pencil"></i> 
                                        </a> 
                                        &nbsp;&nbsp;
-                                       <a href="{{ url('cpanel/posts/delete?id=')}}{{ post.id }}">
+                                       <a href="{{ url('cpanel/blog/posts/delete?id=')}}{{ post.id }}">
                                           <i class="glyphicon glyphicon-trash"></i> 
                                        </a>
                                     </p>
