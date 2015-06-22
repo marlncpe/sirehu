@@ -252,6 +252,17 @@
                                     <li><a href="{{ url('cpanel/departments/add') }}">Crear</a></li>
                                  </ul>
                               </li>
+                              <li>
+                                 <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-briefcase"></i>
+                                    <span>Cargos</span>
+                                    <i class="fa fa-chevron-circle-right drop-icon"></i>
+                                 </a>
+                                 <ul class="submenu">
+                                    <li><a href="{{ url('cpanel/charges') }}">Ver Todos</a></li>
+                                    <li><a href="{{ url('cpanel/charges/add') }}">Crear</a></li>
+                                 </ul>
+                              </li>
                              
                               <!--End Menu Options-->
                            </ul>
