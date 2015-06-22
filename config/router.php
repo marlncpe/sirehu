@@ -123,6 +123,13 @@
 		));
 		//End Departments Information
 		//End Departments
+		//Begin Charges
+		$router->add("/cpanel/charges", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'index',
+		));
+		//End Charges
 		/*
 		*Routers Frontend
 		*/
