@@ -203,7 +203,7 @@
                            <ul class="nav nav-pills nav-stacked">
                               <!-- Menu Options-->
                               <li class="active">
-                                 <a href="index.html">
+                                 <a href="{{ url('cpanel') }}">
                                  <i class="fa fa-dashboard"></i>
                                  <span>Inicio</span>
                                  <!--<span class="label label-info label-circle pull-right">28</span>-->
