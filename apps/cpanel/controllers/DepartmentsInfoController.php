@@ -63,9 +63,9 @@ class DepartmentsInfoController extends ControllerBase
                 ));
             }
 
-            $this->view->id = $department->id;
             $this->view->department = $department;
-
+            $this->view->id = $department->id;
+     
             $this->tag->setDefault("id", $department->getId());
             $this->tag->setDefault("titulo", $department->getTitulo());
             

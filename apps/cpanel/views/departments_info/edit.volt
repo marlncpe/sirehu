@@ -25,7 +25,7 @@
                         {{ form("cpanel/departments/information/update", "method":"post") }}
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Servicio</label>
-                              {{ text_area("tirulo", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion del servicio que tendra el Departamento de RRHH") }}
+                              {{ text_area("titulo", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion del servicio que tendra el Departamento de RRHH") }}
                            </div>
                            <div align="center">
                               <br />
