@@ -27,7 +27,7 @@ class DepartmentsInfoController extends ControllerBase
         $department = new CoreDepartmentsInfo();   
         
         $department->setIdUser("1");
-        $department->setIdDepartament($id_departament);
+        $department->setIdDepartament($this->request->getPost("id_department"));
         $department->setTitulo($this->request->getPost("titulo"));
         $department->setFechaCreacion(date("d-m-Y"));
 
@@ -35,10 +35,10 @@ class DepartmentsInfoController extends ControllerBase
             foreach ($department->getMessages() as $message) {
                 $this->flash->error($message);
             }
-            $this->flash->success("El Departamento no ha sido creado");
+            $this->flash->success("El servicio del departamento no ha sido creado");
         }else{
 
-            $this->flash->success("El Departamento ha sido creado satifactoriamente");
+            $this->flash->success("El servicio del departamento ha sido creado satifactoriamente");
 
             return $this->dispatcher->forward(array(
             	"module" => "cpanel",

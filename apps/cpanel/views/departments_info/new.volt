@@ -24,6 +24,7 @@
                            <div class="form-group">
                               <label for="labeldescripcion">Titulo del Servicio a prestar</label>
                               <textarea class="form-control" name="titulo" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tienes un limite de 180 letras para crear el titulo del servicio a ofrecer por el departamento o coordinacion"></textarea>
+                              <input type="hidden" value="{{ department.id }}" name="id_department">
                            </div>
                            <div align="center">
                               <br />

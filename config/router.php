@@ -101,7 +101,11 @@
 			'controller' => 'departments_info',
 			'action' => 'new',
 		));
-		
+		$router->add("/cpanel/departments/information/create", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'create',
+		));
 		//End Departments Information
 		//End Departments
 		/*
