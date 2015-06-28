@@ -77,6 +77,22 @@ class Module
 				"charset" => "utf8"
 			));
 		});
+		/**
+		* If the configuration specify the use of metadata adapter use it or use memory otherwise
+		*/
+		$di['modelsMetadata'] = function () {
+		    return new MetaDataAdapter();
+		};
+
+		/**
+		 * Start the session the first time some component request the session service
+		 */
+		$di['session'] = function () {
+		    $session = new SessionAdapter();
+		    $session->start();
+
+		    return $session;
+		};
 
 	}
 
