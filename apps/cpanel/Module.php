@@ -13,7 +13,7 @@ class Module
 
 	public function registerAutoloaders()
 	{
-
+		$eventsManager = new \Phalcon\Events\Manager();
 		$loader = new Loader();
 
 		$loader->registerNamespaces(array(
@@ -25,6 +25,20 @@ class Module
 			'Sirehu\Core\Models' => dirname(__DIR__) .'/core/models',
 			'Sirehu\Blog\Models' => dirname(__DIR__) .'/blog/models',
 		));
+		$loader->registerDirs([
+	        __DIR__ . '/plugins/'
+	    ]);
+		
+		//Listen all the loader events
+		$eventsManager->attach('loader', function($event, $loader) {
+		    if ($event->getType() == 'beforeCheckPath') {
+		    	$eventsManager1;
+		    }
+	
+		});
+
+		$loader->setEventsManager($eventsManager);
+
 
 		$loader->register();
 	}
@@ -77,22 +91,7 @@ class Module
 				"charset" => "utf8"
 			));
 		});
-		/**
-		* If the configuration specify the use of metadata adapter use it or use memory otherwise
-		*/
-		$di['modelsMetadata'] = function () {
-		    return new MetaDataAdapter();
-		};
 
-		/**
-		 * Start the session the first time some component request the session service
-		 */
-		$di['session'] = function () {
-		    $session = new SessionAdapter();
-		    $session->start();
-
-		    return $session;
-		};
 
 	}
 

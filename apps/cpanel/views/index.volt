@@ -164,7 +164,7 @@
                         <li class="dropdown profile-dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                            <img src="img/samples/scarlet-159.png" alt=""/>
-                           <span class="hidden-xs">admin admin</span> <b class="caret"></b>
+                           <span class="hidden-xs">{{ session.get('userlast') }}, {{ session.get('usernames') }}       </span> <b class="caret"></b>
                            </a>
                            <ul class="dropdown-menu">
                               <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil</a></li>
