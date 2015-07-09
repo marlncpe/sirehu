@@ -21,10 +21,10 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="home-slider__content">
-                      <h1 class="first-child animated slideInDown delay-2">{{ slider.blog_posts.titulo }}</h1>
-                      <h3 class="animated slideInDown delay-3">Creado por: {{ slider.blog_posts.core_users.nombres }}, {{ slider.blog_posts.core_users.nombres }} el {{ slider.blog_posts.fechacreacion }}</h3>
-                      <p class="text-muted animated slideInLeft delay-4">{{ slider.blog_posts.resumen }}.</p>
-                      <a href="{{ url('/blog/post?post=') }}{{ slider.blog_posts.id }}" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">leer Más</a>
+                      <h1 class="letrablanca first-child animated slideInDown delay-2">{{ slider.blog_posts.titulo }}</h1>
+                      <h4 class="letrablanca animated slideInDown delay-3">Creado por: {{ slider.blog_posts.core_users.nombres }}, {{ slider.blog_posts.core_users.nombres }} el {{ slider.blog_posts.fechacreacion }}</h4>
+                      <p class="letrablanca animated slideInLeft delay-4">{{ slider.blog_posts.resumen }}.</p>
+                      <a href="{{ url('/blog/post?post=') }}{{ slider.blog_posts.id }}" class="btn btn-lg btn-theme-primary animated fadeInUpBig delay-5">Leer más</a>
                     </div>
                   </div>
                 </div> <!-- / .row -->

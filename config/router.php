@@ -197,6 +197,43 @@
 			'action' => 'delete',
 		));
 		//End Administration Blog
+		//Begin Administration Users
+		$router->add("/cpanel/users", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'index',
+		));
+		$router->add("/cpanel/users/add", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/users/create", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'create',
+		));
+		$router->add("/cpanel/users/search", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'search',
+		));
+		$router->add("/cpanel/users/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/users/update", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'save',
+		));
+		$router->add("/cpanel/users/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'delete',
+		));
+		//End Administration  Users
 		/*
 		*Routers Frontend
 		*/

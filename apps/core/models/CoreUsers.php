@@ -45,6 +45,18 @@ class CoreUsers extends \Phalcon\Mvc\Model
 
     /**
      *
+     * @var string
+     */
+    protected $foto;
+
+    /**
+     *
+     * @var integer
+     */
+    protected $id_cargo;
+
+    /**
+     *
      * @var integer
      */
     protected $id_permiso;
@@ -141,6 +153,32 @@ class CoreUsers extends \Phalcon\Mvc\Model
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field foto
+     *
+     * @param string $foto
+     * @return $this
+     */
+    public function setFoto($foto)
+    {
+        $this->foto = $foto;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field id_cargo
+     *
+     * @param integer $id_cargo
+     * @return $this
+     */
+    public function setIdCargo($id_cargo)
+    {
+        $this->id_cargo = $id_cargo;
 
         return $this;
     }
@@ -258,6 +296,26 @@ class CoreUsers extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field foto
+     *
+     * @return string
+     */
+    public function getFoto()
+    {
+        return $this->foto;
+    }
+
+    /**
+     * Returns the value of field id_cargo
+     *
+     * @return integer
+     */
+    public function getIdCargo()
+    {
+        return $this->id_cargo;
+    }
+
+    /**
      * Returns the value of field id_permiso
      *
      * @return integer
@@ -299,10 +357,11 @@ class CoreUsers extends \Phalcon\Mvc\Model
 
     /**
      * Validations and business logic
+     *
+     * @return boolean
      */
     public function validation()
     {
-
         $this->validate(
             new Email(
                 array(
@@ -311,9 +370,12 @@ class CoreUsers extends \Phalcon\Mvc\Model
                 )
             )
         );
+
         if ($this->validationHasFailed() == true) {
             return false;
         }
+
+        return true;
     }
 
     /**
@@ -321,34 +383,71 @@ class CoreUsers extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_comments', 'id_user_respuesta', array('alias' => 'Blog_comments'));
-        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_comments', 'id_user', array('alias' => 'Blog_comments'));
-        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_posts', 'id_user', array('alias' => 'Blog_posts'));
-        $this->hasMany('id', 'Sirehu\Blog\Models\Blog_tags', 'id_user', array('alias' => 'Blog_tags'));
-        $this->belongsTo('id_permiso', 'Sirehu\Core\Models\Core_permisos', 'id', array('alias' => 'Core_permisos'));
-        $this->belongsTo('id_status', 'Sirehu\Core\Models\Core_status', 'id', array('alias' => 'Core_status'));
+        $this->hasMany('id', 'Sirehu\Core\Models\BlogComments', 'id_user_respuesta', array('alias' => 'BlogComments'));
+        $this->hasMany('id', 'Sirehu\Core\Models\BlogComments', 'id_user', array('alias' => 'BlogComments'));
+        $this->hasMany('id', 'Sirehu\Core\Models\BlogPosts', 'id_user', array('alias' => 'BlogPosts'));
+        $this->hasMany('id', 'Sirehu\Core\Models\BlogTags', 'id_user', array('alias' => 'BlogTags'));
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreDepartmentsInfo', 'id_user', array('alias' => 'CoreDepartmentsInfo'));
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreDepartmentsSkills', 'id_user', array('alias' => 'CoreDepartmentsSkills'));
+        $this->hasMany('id', 'Sirehu\Core\Models\CoreUsersStaff', 'id_user', array('alias' => 'CoreUsersStaff'));
+        $this->hasMany('id', 'Sirehu\Core\Models\WebSliders', 'id_user', array('alias' => 'WebSliders'));
+        $this->belongsTo('id_cargo', 'Sirehu\Core\Models\CoreCharges', 'id', array('alias' => 'CoreCharges'));
+        $this->belongsTo('id_status', 'Sirehu\Core\Models\CoreStatus', 'id', array('alias' => 'CoreStatus'));
+        $this->belongsTo('id_permiso', 'Sirehu\Core\Models\CorePermisos', 'id', array('alias' => 'CorePermisos'));
     }
 
+    /**
+     * Returns table name mapped in the model.
+     *
+     * @return string
+     */
     public function getSource()
     {
         return 'core_users';
     }
 
     /**
+     * Allows to query a set of records that match the specified conditions
+     *
+     * @param mixed $parameters
+     * @return CoreUsers[]
+     */
+    public static function find($parameters = null)
+    {
+        return parent::find($parameters);
+    }
+
+    /**
+     * Allows to query the first record that match the specified conditions
+     *
+     * @param mixed $parameters
+     * @return CoreUsers
+     */
+    public static function findFirst($parameters = null)
+    {
+        return parent::findFirst($parameters);
+    }
+
+    /**
      * Independent Column Mapping.
+     * Keys are the real names in the table and the values their names in the application
+     *
+     * @return array
      */
     public function columnMap()
     {
         return array(
-            'id' => 'id', 
-            'usuario' => 'usuario', 
-            'clave' => 'clave', 
-            'nombres' => 'nombres', 
-            'apellidos' => 'apellidos', 
-            'email' => 'email', 
-            'id_permiso' => 'id_permiso', 
-            'id_status' => 'id_status', 
-            'fecha_creacion' => 'fecha_creacion', 
+            'id' => 'id',
+            'usuario' => 'usuario',
+            'clave' => 'clave',
+            'nombres' => 'nombres',
+            'apellidos' => 'apellidos',
+            'email' => 'email',
+            'foto' => 'foto',
+            'id_cargo' => 'id_cargo',
+            'id_permiso' => 'id_permiso',
+            'id_status' => 'id_status',
+            'fecha_creacion' => 'fecha_creacion',
             'fecha_modificacion' => 'fecha_modificacion'
         );
     }
