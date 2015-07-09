@@ -70,96 +70,7 @@
                               </form>
                            </div>
                         </li>
-                        <!-- si queda tiempo se integran las notificaciones
-                        <li class="dropdown hidden-xs">
-                           <a class="btn dropdown-toggle" data-toggle="dropdown">
-                           <i class="fa fa-warning"></i>
-                           <span class="count">8</span>
-                           </a>
-                           <ul class="dropdown-menu notifications-list">
-                              <li class="pointer">
-                                 <div class="pointer-inner">
-                                    <div class="arrow"></div>
-                                 </div>
-                              </li>
-                              <li class="item-header">You have 6 new notifications</li>
-                              <li class="item">
-                                 <a href="#">
-                                 <i class="fa fa-comment"></i>
-                                 <span class="content">New comment on ‘Awesome P...</span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
-                              <li class="item">
-                                 <a href="#">
-                                 <i class="fa fa-plus"></i>
-                                 <span class="content">New user registration</span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
-                              <li class="item">
-                                 <a href="#">
-                                 <i class="fa fa-envelope"></i>
-                                 <span class="content">New Message from George</span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
-                              <li class="item">
-                                 <a href="#">
-                                 <i class="fa fa-shopping-cart"></i>
-                                 <span class="content">New purchase</span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
-                              <li class="item">
-                                 <a href="#">
-                                 <i class="fa fa-eye"></i>
-                                 <span class="content">New order</span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
-                              <li class="item-footer">
-                                 <a href="#">
-                                 Ver Todas las Notificaciones
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                        -->
-                        <li class="dropdown hidden-xs">
-                           <a class="btn dropdown-toggle" data-toggle="dropdown">
-                           <i class="fa fa-envelope-o"></i>
-                           <span class="count">1</span>
-                           </a>
-                           <ul class="dropdown-menu notifications-list messages-list">
-                              <li class="pointer">
-                                 <div class="pointer-inner">
-                                    <div class="arrow"></div>
-                                 </div>
-                              </li>
-                              <li class="item first-item">
-                                 <a href="#">
-                                 <img src="img/samples/messages-photo-1.png" alt=""/>
-                                 <span class="content">
-                                 <span class="content-headline">
-                                 George Clooney
-                                 </span>
-                                 <span class="content-text">
-                                 Look, just because I don't be givin' no man a foot massage don't make it
-                                 right for Marsellus to throw...
-                                 </span>
-                                 </span>
-                                 <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                 </a>
-                              </li>
-                              
-                              <li class="item-footer">
-                                 <a href="#">
-                                 Ver todos los Mensajes
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
+          
                         
                         <li class="dropdown profile-dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -167,9 +78,9 @@
                            <span class="hidden-xs">{{ session.get('userlast') }}, {{ session.get('usernames') }}       </span> <b class="caret"></b>
                            </a>
                            <ul class="dropdown-menu">
-                              <li><a href="user-profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                              <li><a href="#"><i class="fa fa-envelope-o"></i>Mesajes</a></li>
-                              <li><a href="#"><i class="fa fa-power-off"></i>Salir</a></li>
+                              <li><a href=""><i class="fa fa-user"></i>Perfil</a></li>
+                              <li><a href=""><i class="fa fa-envelope-o"></i>Mesajes</a></li>
+                              <li><a href=""><i class="fa fa-power-off"></i>Salir</a></li>
                            </ul>
                         </li>
                         <li class="hidden-xxs">
@@ -218,6 +129,17 @@
                                  <ul class="submenu">
                                     <li><a href="{{ url('cpanel/departments') }}">Ver Todos</a></li>
                                     <li><a href="{{ url('cpanel/departments/add') }}">Crear</a></li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-users"></i>
+                                    <span>Usuarios</span>
+                                    <i class="fa fa-chevron-circle-right drop-icon"></i>
+                                 </a>
+                                 <ul class="submenu">
+                                    <li><a href="{{ url('cpanel/users') }}">Ver Todos</a></li>
+                                    <li><a href="{{ url('cpanel/users/add') }}">Crear</a></li>
                                  </ul>
                               </li>
                               <li>
