@@ -22,7 +22,7 @@
                         {{ form("cpanel/users/create", "method":"post") }}
                            <div class="form-group">
                                 <label for="labelnombre">Nombres</label>                              
-                                {{ text_field("nombres", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombres usuario") }}
+                                {{ text_field("nombres", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombres usuario",'pattern':'[a-zA-Z- ]+') }}
                            </div>
                            <div class="form-group">
                                 <label for="labelnombre">Apellidos</label>                              
