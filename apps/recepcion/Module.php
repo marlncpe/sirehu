@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirehu\Cpanel;
+namespace Sirehu\Recepcion;
 
 use \Phalcon\Mvc\View as View,
 	\Phalcon\Mvc\View\Engine\Volt as VoltEngine,
