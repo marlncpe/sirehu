@@ -38,4 +38,8 @@ $application->registerModules(array(
 		'className' => 'Sirehu\Users\Module',
 		'path' => '../apps/users/Module.php'
 	),
+	'recepcion' => array(
+		'className' => 'Sirehu\Recepcion\Module',
+		'path' => '../apps/recepcion/Module.php'
+	),
 ));

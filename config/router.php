@@ -235,6 +235,50 @@
 		));
 		//End Administration  Users
 		/*
+		End Cpanel
+		*/
+		/*
+		Begin Recepcion
+		*/
+		$router->add("/documents", array(
+			'module' => 'recepcion',
+			'controller' => 'documents',
+			'action' => 'index',
+		));
+		$router->add("/documents/add", array(
+			'module' => 'recepcion',
+			'controller' => 'documents',
+			'action' => 'new',
+		));
+		$router->add("/documents/create", array(
+			'module' => 'recepcion',
+			'controller' => 'documents',
+			'action' => 'create',
+		));
+		$router->add("/documents/search", array(
+			'module' => 'recepcion',
+			'controller' => 'documents',
+			'action' => 'search',
+		));
+		$router->add("/documents/edit", array(
+			'module' => 'recepcion',
+			'controller' => 'documents',
+			'action' => 'edit',
+		));
+		$router->add("/documents/update", array(
+			'module' => 'recepcion',
+			'controller' => 'documents',
+			'action' => 'save',
+		));
+		$router->add("/documents/delete", array(
+			'module' => 'recepcion',
+			'controller' => 'documents',
+			'action' => 'delete',
+		));
+		/*
+		End Recepcion
+		*/
+		/*
 		*Routers Frontend
 		*/
 		$router->add("/", array(
