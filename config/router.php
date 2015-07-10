@@ -240,7 +240,7 @@
 		/*
 		Begin Recepcion
 		*/
-		$router->add("/documentos", array(
+		$router->add("/documents", array(
 			'module' => 'recepcion',
 			'controller' => 'documents',
 			'action' => 'index',

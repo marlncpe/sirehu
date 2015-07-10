@@ -19,6 +19,7 @@ class Module
 		$loader->registerNamespaces(array(
 			'Sirehu\Recepcion\Controllers' => __DIR__ . '/controllers/',
 			'Sirehu\Recepcion\Models' => __DIR__ . '/models/',
+			'Sirehu\Core\Models' => dirname(__DIR__) .'/core/models',
 		));
 		$loader->registerDirs([
 	        __DIR__ . '/plugins/'

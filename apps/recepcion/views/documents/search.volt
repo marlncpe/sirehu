@@ -3,11 +3,10 @@
                         <div class="row">
                            <div class="col-lg-12">
                               <ol class="breadcrumb">
-                                 <li><a href="#">Cpanel</a></li>
-                                 <li><a href="#">BLOG</a></li>
-                                 <li class="active"><span>{{ post.titulo }}</span></li>
+                                 <li><a href="#">Documentos</a></li>
+                                 <li class="active"><span>{{ document.titulo }}</span></li>
                               </ol>
-                              <h1>Articulo del Blog: {{ post.titulo }}</h1>
+                              <h1>Documento: {{ document.titulo }}</h1>
                            </div>
                         </div>
                         
@@ -18,13 +17,10 @@
                                  <br />
                                  <div class="table-responsive">
                                     <p align="center">
-                                       Informacion Detallada del Articulo
+                                       Informacion Detallada del Documento
                                        &nbsp;&nbsp;
-                                       <a href="{{ url('cpanel/blog/posts/edit?id=')}}{{ post.id }}">
-                                          <i class="glyphicon glyphicon-pencil"></i> 
-                                       </a> 
                                        &nbsp;&nbsp;
-                                       <a href="{{ url('cpanel/blog/posts/delete?id=')}}{{ post.id }}">
+                                       <a href="{{ url('documents/delete?id=')}}{{ document.id }}">
                                           <i class="glyphicon glyphicon-trash"></i> 
                                        </a>
                                     </p>
@@ -32,19 +28,23 @@
                                        <tbody>
                                           <tr>
                                              <td width="15%">Nombre</td>
-                                             <td width="75%"><a href="#" name="nombre" >{{ post.titulo }}</a></td>
+                                             <td width="75%"><a href="#" name="nombre" >{{ document.titulo }}</a></td>
                                           </tr>
                                           <tr>
                                              <td width="15%">Creador</td>
-                                             <td width="75%"><a href="#" name="nombre" >{{ post.Core_users.nombres }}, {{ post.Core_users.apellidos }}</a></td>
+                                             <td width="75%"><a href="#" name="nombre" >{{ document.Core_users.nombres }}, {{ document.Core_users.apellidos }}</a></td>
                                           </tr>
                                           <tr>
                                              <td>Fecha de Creacion</td>
-                                             <td><a href="#" name="fecha">{{ post.fechaCreacion }}</a></td>
+                                             <td><a href="#" name="fecha">{{ document.fechaCreacion }}</a></td>
                                           </tr>
                                           <tr>
                                              <td>Descripcion</td>
-                                             <td><a href="#" name="descripcion">{{ post.descripcion }}</a></td>
+                                             <td><a href="#" name="descripcion">{{ document.desscripcion }}</a></td>
+                                          </tr>
+                                          <tr>
+                                             <td>Enlace</td>
+                                             <td><a href="{{ url('document.urlDocumento') }}" name="descripcion">Abir: {{ document.titulo }}</a></td>
                                           </tr>
                                     </table>
                                  </div>

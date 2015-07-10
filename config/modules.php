@@ -22,10 +22,6 @@ $application->registerModules(array(
 		'className' => 'Sirehu\Frontend\Module',
 		'path' => '../apps/frontend/Module.php'
 	),
-	'galeria' => array(
-		'className' => 'Sirehu\Galeria\Module',
-		'path' => '../apps/galeria/Module.php'
-	),
 	'odontologia' => array(
 		'className' => 'Sirehu\Odontologia\Module',
 		'path' => '../apps/odontologia/Module.php'
