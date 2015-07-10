@@ -25,11 +25,11 @@
                         {{ form("cpanel/departments/information/update", "method":"post") }}
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Servicio</label>
-                              {{ text_area("titulo", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion del servicio que tendra el Departamento de RRHH") }}
+                              {{ text_area("titulo", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion del servicio que tendra el Departamento de RRHH",'pattern':'[a-zA-Z  ]+','required':'true') }}
                            </div>
                            <div align="center">
                               <br />
-                              <button type="submit" class="btn btn-primary">Editar Servicio</button>
+                              <button type="submit" class="btn btn-primary">Actualizar Servicio</button>
                            </div>
                            {{ hidden_field("id") }}
                            

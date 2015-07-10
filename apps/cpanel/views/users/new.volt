@@ -22,19 +22,19 @@
                         {{ form("cpanel/users/create", "method":"post") }}
                            <div class="form-group">
                                 <label for="labelnombre">Nombres</label>                              
-                                {{ text_field("nombres", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombres usuario") }}
+                                {{ text_field("nombres", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Introduzca sus nombres",'pattern':'[a-zA-Z  ]+','required':'true') }}
                            </div>
                            <div class="form-group">
                                 <label for="labelnombre">Apellidos</label>                              
-                                {{ text_field("apellidos", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Apellidos usuario") }}
+                                {{ text_field("apellidos", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Introduzca sus apellidos", 'pattern':'[a-zA-Z  ]+','required':'true') }}
                            </div>
                            <div class="form-group">
                                 <label for="labelnombre">Cedula de Identidad</label>                              
-                                {{ text_field("cedula", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Cedula de Identidad") }}
+                                {{ text_field("cedula", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Cedula de Identidad",'pattern':'[0-9-.]+','required':'true') }}
                            </div>
                            <div class="form-group">
                                 <label for="labelnombre">Correo Electronico</label>                              
-                                {{ text_field("correo", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Correo Electronico") }}
+                                {{ text_field("correo", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Correo Electronico",'required':'true') }}
                            </div>
                            <div align="center">
                               <br />

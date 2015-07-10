@@ -21,16 +21,16 @@
                      <div class="main-box-body clearfix">
                         {{ form("cpanel/departments/create", "method":"post","enctype":"multipart/form-data") }}
                            <div class="form-group">
-                              <label for="labelnombre">Nombre Departamento</label>                              
-                              <input type="text" class="form-control" name="nombre" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nombre que tendra el Departamento Nuevo a Integrar RRHH">
+                              <label for="labelnombre">Nombre del Departamento</label>                              
+                              <input type="text" class="form-control" name="nombre" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nombre que tendra el Departamento Nuevo a Integrar RRHH" pattern="[a-zA-Z ]+" required>
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Departamento</label>
-                              <textarea class="form-control" name="descripcion" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el Departamento Nuevo a Integrar RRHH"></textarea>
+                              <textarea class="form-control" name="descripcion" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el Departamento Nuevo a Integrar RRHH" pattern="[a-zA-Z ]+" required></textarea>
                            </div>
                            <div class="form-group">
                               <label for="labelnombre">Email Departamento</label>                              
-                              <input type="email" class="form-control" name="email" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Email que tendra el Departamento Nuevo a Integrar RRHH">
+                              <input type="email" class="form-control" name="email" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Email que tendra el Departamento Nuevo a Integrar RRHH" required>
                            </div>
                            <div>
                               <label for="labelimagen">Imagen Departamento</label>                              

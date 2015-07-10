@@ -1,8 +1,8 @@
 <?php
 
-namespace Sirehu\recepcion\Controllers;
+namespace Sirehu\Recepcion\Controllers;
 
-use Sirehu\Blog\Models\Documents;
+use Sirehu\Recepcion\Models\Documents;
 
 class DocumentsController extends ControllerBase
 {
@@ -11,10 +11,10 @@ class DocumentsController extends ControllerBase
     {
         $this->view->documents = Documents::find();
     }
-    public function searchAction()
+     public function searchAction()
     {
-    	$id = (int) $_GET["id"];
-        $this->view->documents = Documents::findFirstByid($id);
+        $id = (int) $_GET["id"];
+        $this->view->document = documents::findFirstByid($id);
     }
     public function newAction(){
 
@@ -22,31 +22,31 @@ class DocumentsController extends ControllerBase
     public function createAction()
     {
      
-        $documents = new Documents();
+        $post = new documents();
         
-        $documents->setIdCategory("1");
-        $documents->setIdUser("1");
-        $documents->setTitulo($this->request->getPost("titulo"));
-        $documents->setResumen($this->request->getPost("resumen"));
-        $documents->setDescripcion($this->request->getPost("descripcion"));
-        $documents->setTags($this->request->getPost("tags"));
-        $documents->setIdUrlImg("0");
-        $documents->setIdStatus("1");
-        $documents->setFechaCreacion(date("d-m-Y"));
-        $documents->setFechaModificacion(" ");
+        $post->setIdCategory("1");
+        $post->setIddocument("1");
+        $post->setTitulo($this->request->getPost("titulo"));
+        $post->setResumen($this->request->getPost("resumen"));
+        $post->setDescripcion($this->request->getPost("descripcion"));
+        $post->setTags($this->request->getPost("tags"));
+        $post->setIdUrlImg("0");
+        $post->setIdStatus("1");
+        $post->setFechaCreacion(date("d-m-Y"));
+        $post->setFechaModificacion(" ");
             
 
-        if (!$documents->save()) {
+        if (!$post->save()) {
             foreach ($post->getMessages() as $message) {
                 $this->flash->error($message);
             }
-            $this->flash->success("El Documento no ha sido creado");
+            $this->flash->success("El Articulo no ha sido creado");
         }else{
 
-            $this->flash->success("El Documento ha sido creado satifactoriamente");
+            $this->flash->success("El Articulo ha sido creado satifactoriamente");
 
             return $this->dispatcher->forward(array(
-            	"module" => "recepcion",
+                "module" => "cpanel",
                 "controller" => "documents",
                 "action" => "index",
             ));
@@ -57,29 +57,25 @@ class DocumentsController extends ControllerBase
         $id = (int) $_GET["id"];
         if (!$this->request->isPost()) {
 
-            $documents = Documents::findFirstByid($id);
-            if (!$documents) {
-                $this->flash->error("El Documento no ha sido encontrado");
+            $document = documents::findFirstByid($id);
+            if (!$document) {
+                $this->flash->error("El Usuario no ha sido encontrado");
 
                 return $this->dispatcher->forward(array(
-                    "module" => "recepcion",
+                    "module" => "cpanel",
                     "controller" => "documents",
                     "action" => "index"
                 ));
             }
 
-            $this->view->id = $documents->id;
+            $this->view->id = $document->id;
 
-            $this->tag->setDefault("id", $documents->getId());
-            $this->tag->setDefault("id_category", $documents->getIdCategory());
-            $this->tag->setDefault("titulo", $documents->getTitulo());
-            $this->tag->setDefault("descripcion", $documents->getDescripcion());
-            $this->tag->setDefault("resumen", $documents->getResumen());
-            $this->tag->setDefault("tags", $documents->getTags());
-            $this->tag->setDefault("urlimg", $documents->getIdUrlImg());
-            $this->tag->setDefault("status", $documents->getIdStatus());
-            $this->tag->setDefault("fecha", $documents->getFechaCreacion());
- 
+            $this->tag->setDefault("id", $document->getId());
+            $this->tag->setDefault("nombres", $document->getNombres());
+            $this->tag->setDefault("apellidos", $document->getApellidos());
+            $this->tag->setDefault("correo", $document->getEmail());
+            $this->tag->setDefault("cedula", $document->getCedula());
+
         }
     }
     public function saveAction()
@@ -87,7 +83,7 @@ class DocumentsController extends ControllerBase
 
         if (!$this->request->isPost()) {
             return $this->dispatcher->forward(array(
-                "module" => "recepcion",
+                "module" => "cpanel",
                 "controller" => "documents",
                 "action" => "index"
             ));
@@ -95,46 +91,49 @@ class DocumentsController extends ControllerBase
 
         $id = $this->request->getPost("id");
 
-        $documents = Documents::findFirstByid($id);
-        if (!$documents) {
-            $this->flash->error("El Documento no existe " . $id);
+        $document = documents::findFirstByid($id);
+        if (!$document) {
+            $this->flash->error("El Articulo no existe " . $id);
 
             return $this->dispatcher->forward(array(
-                "module" => "recepcion",
+                "module" => "cpanel",
                 "controller" => "documents",
                 "action" => "index"
             ));
         }
 
-        $documents->setIdCategory($post->getIdCategory());
-        $documents->setTitulo($this->request->getPost("titulo"));
-        $documents->setResumen($this->request->getPost("resumen"));
-        $documents->setDescripcion($this->request->getPost("descripcion"));
-        $documents->setTags($this->request->getPost("tags"));
-        $documents->setIdUrlImg($post->getIdUrlImg());
-        $documents->setIdStatus($post->getIdStatus());
-        $documents->setFechaCreacion($post->getFechaCreacion());
-        $documents->setFechaModificacion(date("d-m-Y"));
-        
+       
+        $document->setUsuario($document->getUsuario());
+        $document->setClave($document->getClave());
+        $document->setCedula($this->request->getPost("cedula"));
+        $document->setNombres($this->request->getPost("nombres"));
+        $document->setApellidos($this->request->getPost("apellidos"));
+        $document->setEmail($this->request->getPost("correo"));
+        $document->setFoto($document->getFoto());
+        $document->setIdCargo($document->getIdCargo());
+        $document->setIdPermiso($document->getIdPermiso());
+        $document->setIdStatus($document->getIdStatus());
+        $document->setFechaCreacion($document->getFechaCreacion());
+        $document->setFechaModificacion(date("d-m-Y"));
 
 
-        if (!$documents->save()) {
+        if (!$document->save()) {
 
-            foreach ($documents->getMessages() as $message) {
+            foreach ($post->getMessages() as $message) {
                 $this->flash->error($message);
             }
 
             return $this->dispatcher->forward(array(
-                "module" => "recepcion",
+                "module" => "cpanel",
                 "controller" => "documents",
                 "action" => "edit"
             ));
         }
 
-        $this->flash->success("El Documento fue actualizado con exito");
+        $this->flash->success("El Usuario fue actualizado con exito");
 
         return $this->dispatcher->forward(array(
-            "module" => "recepcion",
+            "module" => "cpanel",
             "controller" => "documents",
             "action" => "index"
         ));
@@ -143,38 +142,37 @@ class DocumentsController extends ControllerBase
     public function deleteAction()
     {
         $id = (int) $_GET["id"];
-        $documents = Documents::findFirstByid($id);
-        if (!$documents) {
-            $this->flash->error("El Documento no ha sido encontrado");
+        $post = documents::findFirstByid($id);
+        if (!$post) {
+            $this->flash->error("El Usuario no ha sido encontrado");
 
             return $this->dispatcher->forward(array(
-                "module" => "recepcion",
+                "module" => "cpanel",
                 "controller" => "documents",
                 "action" => "index"
             ));
         }
 
-        if (!$documents->delete()) {
+        if (!$post->delete()) {
 
-            foreach ($documents->getMessages() as $message) {
+            foreach ($post->getMessages() as $message) {
                 $this->flash->error($message);
             }
 
             return $this->dispatcher->forward(array(
-                "module" => "recepcion",
+                "module" => "cpanel",
                 "controller" => "documents",
                 "action" => "search"
             ));
         }
 
-        $this->flash->success("Documento ha sido borrado satifactoriamente");
+        $this->flash->success("Usuario ha sido borrado satifactoriamente");
 
         return $this->dispatcher->forward(array(
-            "module" => "recepcion",
+            "module" => "cpanel",
             "controller" => "documents",
             "action" => "index"
         ));
-    }
-    
+    }      
 }
 

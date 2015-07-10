@@ -114,37 +114,69 @@
                            <ul class="nav nav-pills nav-stacked">
                               <!-- Menu Options-->
                               <li class="active">
-                                 <a href="{{ url('cpanel') }}">
+                                 <a href="{{ url('documents') }}">
                                  <i class="fa fa-dashboard"></i>
                                  <span>Inicio</span>
                                  <!--<span class="label label-info label-circle pull-right">28</span>-->
                                  </a>
                               </li>
+                              <li class="active">
+                                 <a href="{{ url('documents/add') }}">
+                                 <i class="fa fa-edit drop-icon"></i>
+                                 <span>Enviar Documento</span>
+                                 <!--<span class="label label-info label-circle pull-right">28</span>-->
+                                 </a>
+                              </li>
                               <li>
                                  <a href="#" class="dropdown-toggle">
-                                    <i class="fa fa-edit"></i>
+                                    <i class="fa fa-file"></i>
                                     <span>Documentos</span>
                                     <i class="fa fa-chevron-circle-right drop-icon"></i>
                                  </a>
                                  <ul class="submenu">
-                            
                                     <li>
                                        <a href="#" class="dropdown-toggle">
-                                          Articulos
+                                          Recibidos
                                           <i class="fa fa-chevron-circle-right drop-icon"></i>
                                        </a>
-                                    <ul class="submenu">
+                                       <ul class="submenu">
+                                          <li>
+                                             <a href="{{ url('documents') }}">
+                                                Ver Todos
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="{{ url('documents/search?id=3') }}">
+                                                Pendientes
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="{{ url('documents/search?id=4') }}">
+                                                Leidos
+                                             </a>
+                                          </li>
+                                       </ul>
                                     <li>
-                                       <a href="{{ url('cpanel/blog') }}">
-                                          Ver Todos
-                                       </a>
-                                    </li>
                                     <li>
-                                       <a href="{{ url('cpanel/blog/posts/add') }}">
-                                          Crear
+                                       <a href="#" class="dropdown-toggle">
+                                          Enviados
+                                          <i class="fa fa-chevron-circle-right drop-icon"></i>
                                        </a>
-                                    </li>
+                                       <ul class="submenu">
+                                          <li>
+                                             <a href="{{ url('documents/search?id=5') }}">
+                                                Ver Todos
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="{{ url('documents/add') }}">
+                                                Crear
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    <li>
                                  </ul>
+
                               </li>
                                 
                               <!--End Menu Options-->

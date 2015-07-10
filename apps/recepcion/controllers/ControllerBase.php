@@ -1,6 +1,6 @@
 <?php
 
-namespace Sirehu\Cpanel\Controllers;
+namespace Sirehu\Recepcion\Controllers;
 
 use Phalcon\Mvc\Controller;
 

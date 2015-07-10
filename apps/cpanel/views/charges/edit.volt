@@ -8,7 +8,7 @@
                                  <li><a href="#">Coordinaciones</a></li>
                                  <li class="active"><span>Editar</span></li>
                               </ol>
-                              <h1>Editar Coordinaciones</h1>
+                              <h1>Editar Cargo</h1>
                            </div>
                         </div>
                      </div>
@@ -24,15 +24,15 @@
                         {{ form("cpanel/charges/update", "method":"post") }}
                            <div class="form-group">
                                 <label for="labelnombre">Nombre del Cargo</label>                              
-                                {{ text_field("nombre", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre que tendra el Departamento Nuevo a Integrar RRHH") }}
+                                {{ text_field("nombre", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre del cargo",'pattern':'[a-zA-Z  ]+','required':'true') }}
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Cargo</label>
-                              {{ text_area("descripcion", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH") }}
+                              {{ text_area("descripcion", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el cargo",'pattern':'[a-zA-Z  ]+','required':'true') }}
                            </div>
                            <div align="center">
                               <br />
-                              <button type="submit" class="btn btn-primary">Editar Cargo</button>
+                              <button type="submit" class="btn btn-primary">Actualizar Cargo</button>
                            </div>
                            {{ hidden_field("id") }}
                         </form>
