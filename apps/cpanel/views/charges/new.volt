@@ -22,11 +22,11 @@
                         {{ form("cpanel/charges/create", "method":"post") }}
                            <div class="form-group">
                               <label for="labelnombre">Nombre del cargo</label>                              
-                              <input type="text" class="form-control" name="nombre" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nombre que tendra el Cargo Nuevo a Integrar RRHH">
+                              <input type="text" class="form-control" name="nombre" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nombre que tendra el Cargo Nuevo a Integrar RRHH" pattern="[a-zA-Z ]+" required>
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Cargo</label>
-                              <textarea class="form-control" name="descripcion" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el cargo Nuevo a Integrar RRHH"></textarea>
+                              <textarea class="form-control" name="descripcion" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el cargo Nuevo a Integrar RRHH" required>></textarea>
                            </div>
                            <div align="center">
                               <br />

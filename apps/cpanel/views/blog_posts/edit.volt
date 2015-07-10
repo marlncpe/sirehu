@@ -24,24 +24,21 @@
                         {{ form("cpanel/blog/posts/update", "method":"post") }}
                            <div class="form-group">
                                 <label for="labelnombre">Titulo Articulo</label>                              
-                                {{ text_field("titulo", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre que tendra el Departamento Nuevo a Integrar RRHH") }}
+                                {{ text_field("titulo", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre del articulo.",'pattern':'[a-zA-Z0-9--  ]+','required':'true') }}
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Resumen del Articulo</label>
-                              {{ text_area("resumen", "rows" : 4, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH") }}
+                              {{ text_area("resumen", "rows" : 4, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH",'pattern':'[a-zA-Z0-9-- ]+','required':'true')}}
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Articulo</label>
-                              {{ text_area("descripcion", "rows" : 10, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH") }}
+                              {{ text_area("descripcion", "rows" : 10, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH",'pattern':'[a-zA-Z0-9-- ]+','required':'true')}}
                            </div>
                            <div class="form-group">
                               <label for="labelnombre">Etiquetas del Articulo</label>                              
-                              {{ text_field("tags", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Email que tendra el Departamento Nuevo a Integrar RRHH") }}
+                              {{ text_field("tags", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Email que tendra el Departamento Nuevo a Integrar RRHH",'pattern':'[a-zA-Z0-9-- ]+','required':'true')}}
                            </div>
-                           <div>
-                              <label for="labelimagen">Fecha de Creacion</label>
-                               {{ text_field("fecha", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Imagen que tendra el Departamento Nuevo a Integrar RRHH") }}                              
-                           </div>
+                          
                            <div align="center">
                               <br />
                               <button type="submit" class="btn btn-primary">Editar Coordinación</button>

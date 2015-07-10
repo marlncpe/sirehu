@@ -24,15 +24,15 @@
                         {{ form("cpanel/departments/update", "method":"post","enctype":"multipart/form-data") }}
                            <div class="form-group">
                                 <label for="labelnombre">Nombre Departamento</label>                              
-                                {{ text_field("nombre", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre que tendra el Departamento Nuevo a Integrar RRHH") }}
+                                {{ text_field("nombre", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombre que tendra el Departamento Nuevo a Integrar RRHH",'pattern':'[[a-zA-Z- ]+','required':'true')}}
                            </div>
                            <div class="form-group">
                               <label for="labeldescripcion">Descripcion del Departamento</label>
-                              {{ text_area("descripcion", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH") }}
+                              {{ text_area("descripcion", "rows" : 7, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Descripcion que tendra el Departamento Nuevo a Integrar RRHH",'pattern':'[[a-zA-Z- ]+','required':'true')}}
                            </div>
                            <div class="form-group">
                               <label for="labelnombre">Email Departamento</label>                              
-                              {{ text_field("email", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Email que tendra el Departamento Nuevo a Integrar RRHH") }}
+                              {{ text_field("email", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Email que tendra el Departamento Nuevo a Integrar RRHH",'required':'true')}}
                            </div>
                            <div>
                               <label for="labelimagen">Imagen Departamento</label>
@@ -40,7 +40,7 @@
                            </div>
                            <div align="center">
                               <br />
-                              <button type="submit" class="btn btn-primary">Editar Coordinación</button>
+                              <button type="submit" class="btn btn-primary">Actualizar Coordinación</button>
                            </div>
                            {{ hidden_field("id") }}
                         </form>
