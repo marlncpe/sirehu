@@ -4,10 +4,10 @@
                            <div class="col-lg-12">
                               <ol class="breadcrumb">
                                  <li><a href="#">Cpanel</a></li>
-                                 <li><a href="#">BLOG</a></li>
-                                 <li class="active"><span>{{ post.titulo }}</span></li>
+                                 <li><a href="#">Usuarios</a></li>
+                                 <li class="active"><span>Información</span></li>
                               </ol>
-                              <h1>Articulo del Blog: {{ post.titulo }}</h1>
+                              <h1>Información del Usuario</h1>
                            </div>
                         </div>
                         
@@ -18,13 +18,13 @@
                                  <br />
                                  <div class="table-responsive">
                                     <p align="center">
-                                       Informacion Detallada del Articulo
+                                       Información del Usuario
                                        &nbsp;&nbsp;
-                                       <a href="{{ url('cpanel/blog/posts/edit?id=')}}{{ post.id }}">
+                                       <a href="{{ url('cpanel/users/edit?id=')}}{{ user.id }}">
                                           <i class="glyphicon glyphicon-pencil"></i> 
                                        </a> 
                                        &nbsp;&nbsp;
-                                       <a href="{{ url('cpanel/blog/posts/delete?id=')}}{{ post.id }}">
+                                       <a href="{{ url('cpanel/users/delete?id=')}}{{ user.id }}">
                                           <i class="glyphicon glyphicon-trash"></i> 
                                        </a>
                                     </p>
@@ -32,19 +32,19 @@
                                        <tbody>
                                           <tr>
                                              <td width="15%">Nombre</td>
-                                             <td width="75%"><a href="#" name="nombre" >{{ post.titulo }}</a></td>
+                                             <td width="75%"><a href="#" name="nombre" >{{ user.nombres }}, {{ user.apellidos }}</a></td>
                                           </tr>
                                           <tr>
-                                             <td width="15%">Creador</td>
-                                             <td width="75%"><a href="#" name="nombre" >{{ post.Core_users.nombres }}, {{ post.Core_users.apellidos }}</a></td>
+                                             <td width="15%">Cedula</td>
+                                             <td width="75%"><a href="#" name="nombre" >{{ user.cedula }}</a></td>
                                           </tr>
                                           <tr>
-                                             <td>Fecha de Creacion</td>
-                                             <td><a href="#" name="fecha">{{ post.fechaCreacion }}</a></td>
+                                             <td>Fecha de Registro</td>
+                                             <td><a href="#" name="fecha">{{ user.fechaCreacion }}</a></td>
                                           </tr>
                                           <tr>
                                              <td>Descripcion</td>
-                                             <td><a href="#" name="descripcion">{{ post.descripcion }}</a></td>
+                                             <td><a href="#" name="descripcion">{{ user.descripcion }}</a></td>
                                           </tr>
                                     </table>
                                  </div>

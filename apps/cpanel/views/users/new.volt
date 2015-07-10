@@ -4,10 +4,10 @@
                            <div class="col-lg-12">
                               <ol class="breadcrumb">
                                  <li><a href="#">Cpanel</a></li>
-                                 <li><a href="#">BLOG</a></li>
+                                 <li><a href="#">USUARIOS</a></li>
                                  <li class="active"><span>Agregar</span></li>
                               </ol>
-                              <h1>Agregar Articulo al Blog</h1>
+                              <h1>Agregar Usuario</h1>
                            </div>
                         </div>
                      </div>
@@ -19,26 +19,26 @@
                      <header class="main-box-header clearfix">
                      </header>
                      <div class="main-box-body clearfix">
-                        {{ form("cpanel/blog/posts/create", "method":"post") }}
+                        {{ form("cpanel/users/create", "method":"post") }}
                            <div class="form-group">
-                              <label for="labelnombre">Titulo del Articulo</label>                              
-                              <input type="text" class="form-control" name="titulo" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nombre que tendra el Articulo ">
+                                <label for="labelnombre">Nombres</label>                              
+                                {{ text_field("nombres", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Nombres usuario") }}
                            </div>
                            <div class="form-group">
-                              <label for="labeldescripcion">Resumen del Articulo</label>
-                              <textarea class="form-control" name="resumen" rows="3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Resumen que tendra el Articulo "></textarea>
+                                <label for="labelnombre">Apellidos</label>                              
+                                {{ text_field("apellidos", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Apellidos usuario") }}
                            </div>
                            <div class="form-group">
-                              <label for="labeldescripcion">Descripcion del Articulo</label>
-                              <textarea class="form-control" name="descripcion" rows="8" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descripcion que tendra el Articulo "></textarea>
+                                <label for="labelnombre">Cedula de Identidad</label>                              
+                                {{ text_field("cedula", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Cedula de Identidad") }}
                            </div>
                            <div class="form-group">
-                              <label for="labelnombre">Etiquetas del Articulo</label>                              
-                              <input type="tags" class="form-control" name="tags" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Etiquetas que tendra el Articulo separadas por comas (,) ">
+                                <label for="labelnombre">Correo Electronico</label>                              
+                                {{ text_field("correo", "size" : 30, "class":"form-control", "data-toggle":"tooltip", "data-placement":"bottom", "title":"", "data-original-title":"Correo Electronico") }}
                            </div>
                            <div align="center">
                               <br />
-                              <button type="submit" class="btn btn-primary">Crear Articulo</button>
+                              <button type="submit" class="btn btn-primary">Editar Usuario</button>
                            </div>
                         </form>
                      </div>

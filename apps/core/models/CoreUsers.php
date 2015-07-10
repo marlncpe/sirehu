@@ -29,6 +29,12 @@ class CoreUsers extends \Phalcon\Mvc\Model
      *
      * @var string
      */
+    protected $cedula;
+
+    /**
+     *
+     * @var string
+     */
     protected $nombres;
 
     /**
@@ -114,6 +120,19 @@ class CoreUsers extends \Phalcon\Mvc\Model
     public function setClave($clave)
     {
         $this->clave = $clave;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field cedula
+     *
+     * @param string $cedula
+     * @return $this
+     */
+    public function setCedula($cedula)
+    {
+        $this->cedula = $cedula;
 
         return $this;
     }
@@ -266,6 +285,16 @@ class CoreUsers extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field cedula
+     *
+     * @return string
+     */
+    public function getCedula()
+    {
+        return $this->cedula;
+    }
+
+    /**
      * Returns the value of field nombres
      *
      * @return string
@@ -391,9 +420,9 @@ class CoreUsers extends \Phalcon\Mvc\Model
         $this->hasMany('id', 'Sirehu\Core\Models\CoreDepartmentsSkills', 'id_user', array('alias' => 'CoreDepartmentsSkills'));
         $this->hasMany('id', 'Sirehu\Core\Models\CoreUsersStaff', 'id_user', array('alias' => 'CoreUsersStaff'));
         $this->hasMany('id', 'Sirehu\Core\Models\WebSliders', 'id_user', array('alias' => 'WebSliders'));
-        $this->belongsTo('id_cargo', 'Sirehu\Core\Models\CoreCharges', 'id', array('alias' => 'CoreCharges'));
         $this->belongsTo('id_status', 'Sirehu\Core\Models\CoreStatus', 'id', array('alias' => 'CoreStatus'));
         $this->belongsTo('id_permiso', 'Sirehu\Core\Models\CorePermisos', 'id', array('alias' => 'CorePermisos'));
+        $this->belongsTo('id_cargo', 'Sirehu\Core\Models\CoreCharges', 'id', array('alias' => 'CoreCharges'));
     }
 
     /**
@@ -440,6 +469,7 @@ class CoreUsers extends \Phalcon\Mvc\Model
             'id' => 'id',
             'usuario' => 'usuario',
             'clave' => 'clave',
+            'cedula' => 'cedula',
             'nombres' => 'nombres',
             'apellidos' => 'apellidos',
             'email' => 'email',

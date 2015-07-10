@@ -15,7 +15,7 @@ class UsersController extends ControllerBase
     public function searchAction()
     {
     	$id = (int) $_GET["id"];
-        $this->view->post = CoreUsers::findFirstByid($id);
+        $this->view->user = CoreUsers::findFirstByid($id);
     }
     public function newAction(){
 
@@ -58,9 +58,9 @@ class UsersController extends ControllerBase
         $id = (int) $_GET["id"];
         if (!$this->request->isPost()) {
 
-            $post = CoreUsers::findFirstByid($id);
-            if (!$post) {
-                $this->flash->error("El Articulo no ha sido encontrado");
+            $user = CoreUsers::findFirstByid($id);
+            if (!$user) {
+                $this->flash->error("El Usuario no ha sido encontrado");
 
                 return $this->dispatcher->forward(array(
                     "module" => "cpanel",
@@ -69,18 +69,14 @@ class UsersController extends ControllerBase
                 ));
             }
 
-            $this->view->id = $post->id;
+            $this->view->id = $user->id;
 
-            $this->tag->setDefault("id", $post->getId());
-            $this->tag->setDefault("id_category", $post->getIdCategory());
-            $this->tag->setDefault("titulo", $post->getTitulo());
-            $this->tag->setDefault("descripcion", $post->getDescripcion());
-            $this->tag->setDefault("resumen", $post->getResumen());
-            $this->tag->setDefault("tags", $post->getTags());
-            $this->tag->setDefault("urlimg", $post->getIdUrlImg());
-            $this->tag->setDefault("status", $post->getIdStatus());
-            $this->tag->setDefault("fecha", $post->getFechaCreacion());
- 
+            $this->tag->setDefault("id", $user->getId());
+            $this->tag->setDefault("nombres", $user->getNombres());
+            $this->tag->setDefault("apellidos", $user->getApellidos());
+            $this->tag->setDefault("correo", $user->getEmail());
+            $this->tag->setDefault("cedula", $user->getCedula());
+
         }
     }
     public function saveAction()
@@ -96,8 +92,8 @@ class UsersController extends ControllerBase
 
         $id = $this->request->getPost("id");
 
-        $post = CoreUsers::findFirstByid($id);
-        if (!$post) {
+        $user = CoreUsers::findFirstByid($id);
+        if (!$user) {
             $this->flash->error("El Articulo no existe " . $id);
 
             return $this->dispatcher->forward(array(
@@ -107,19 +103,22 @@ class UsersController extends ControllerBase
             ));
         }
 
-        $post->setIdCategory($post->getIdCategory());
-        $post->setTitulo($this->request->getPost("titulo"));
-        $post->setResumen($this->request->getPost("resumen"));
-        $post->setDescripcion($this->request->getPost("descripcion"));
-        $post->setTags($this->request->getPost("tags"));
-        $post->setIdUrlImg($post->getIdUrlImg());
-        $post->setIdStatus($post->getIdStatus());
-        $post->setFechaCreacion($post->getFechaCreacion());
-        $post->setFechaModificacion(date("d-m-Y"));
-        
+       
+        $user->setUsuario($user->getUsuario());
+        $user->setClave($user->getClave());
+        $user->setCedula($this->request->getPost("cedula"));
+        $user->setNombres($this->request->getPost("nombres"));
+        $user->setApellidos($this->request->getPost("apellidos"));
+        $user->setEmail($this->request->getPost("correo"));
+        $user->setFoto($user->getFoto());
+        $user->setIdCargo($user->getIdCargo());
+        $user->setIdPermiso($user->getIdPermiso());
+        $user->setIdStatus($user->getIdStatus());
+        $user->setFechaCreacion($user->getFechaCreacion());
+        $user->setFechaModificacion(date("d-m-Y"));
 
 
-        if (!$post->save()) {
+        if (!$user->save()) {
 
             foreach ($post->getMessages() as $message) {
                 $this->flash->error($message);
@@ -132,7 +131,7 @@ class UsersController extends ControllerBase
             ));
         }
 
-        $this->flash->success("El Articulo fue actualizado con exito");
+        $this->flash->success("El Usuario fue actualizado con exito");
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",
@@ -146,7 +145,7 @@ class UsersController extends ControllerBase
         $id = (int) $_GET["id"];
         $post = CoreUsers::findFirstByid($id);
         if (!$post) {
-            $this->flash->error("El Articulo no ha sido encontrado");
+            $this->flash->error("El Usuario no ha sido encontrado");
 
             return $this->dispatcher->forward(array(
                 "module" => "cpanel",
@@ -168,7 +167,7 @@ class UsersController extends ControllerBase
             ));
         }
 
-        $this->flash->success("Articulo ha sido borrado satifactoriamente");
+        $this->flash->success("Usuario ha sido borrado satifactoriamente");
 
         return $this->dispatcher->forward(array(
             "module" => "cpanel",
