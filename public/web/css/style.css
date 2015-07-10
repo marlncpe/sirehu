@@ -7539,8 +7539,11 @@ body {
   /* navbar height + margin */
   margin-bottom: 0;
   padding-bottom: 50px;
-  background: #f6f6f6 url(../img/image-2.png) no-repeat center bottom;
+  background: #f6f6f6 url(../../img/unellez_fondo.png) no-repeat center bottom;
   background-size: cover;
+}
+.letrablanca{
+  color: white;
 }
 .fullscreen h3 {
   color: #ed3e49;

@@ -59,6 +59,181 @@
 			'controller' => 'index',
 			'action' => 'index',
 		));
+		//Begin Departments
+		$router->add("/cpanel/departments", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'index',
+		));
+		$router->add("/cpanel/departments/add", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/departments/create", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'create',
+		));
+		$router->add("/cpanel/departments/search", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'search',
+		));
+		$router->add("/cpanel/departments/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/departments/update", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'save',
+		));
+		$router->add("/cpanel/departments/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'departments',
+			'action' => 'delete',
+		));
+		//Begin Departments Information
+		$router->add("/cpanel/departments/information/add", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/departments/information/create", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'create',
+		));
+		$router->add("/cpanel/departments/information/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/departments/information/update", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'save',
+		));
+		$router->add("/cpanel/departments/information/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'departments_info',
+			'action' => 'delete',
+		));
+		//End Departments Information
+		//End Departments
+		//Begin Charges
+		$router->add("/cpanel/charges", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'index',
+		));
+		$router->add("/cpanel/charges/add", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/charges/create", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'create',
+		));
+		$router->add("/cpanel/charges/search", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'search',
+		));
+		$router->add("/cpanel/charges/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/charges/update", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'save',
+		));
+		$router->add("/cpanel/charges/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'charges',
+			'action' => 'delete',
+		));
+		//End Charges
+		//Begin Administration Blog
+		$router->add("/cpanel/blog", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'index',
+		));
+		$router->add("/cpanel/blog/posts/add", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/blog/posts/create", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'create',
+		));
+		$router->add("/cpanel/blog/posts/search", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'search',
+		));
+		$router->add("/cpanel/blog/posts/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/blog/posts/update", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'save',
+		));
+		$router->add("/cpanel/blog/posts/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'blog_posts',
+			'action' => 'delete',
+		));
+		//End Administration Blog
+		//Begin Administration Users
+		$router->add("/cpanel/users", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'index',
+		));
+		$router->add("/cpanel/users/add", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'new',
+		));
+		$router->add("/cpanel/users/create", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'create',
+		));
+		$router->add("/cpanel/users/search", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'search',
+		));
+		$router->add("/cpanel/users/edit", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'edit',
+		));
+		$router->add("/cpanel/users/update", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'save',
+		));
+		$router->add("/cpanel/users/delete", array(
+			'module' => 'cpanel',
+			'controller' => 'users',
+			'action' => 'delete',
+		));
+		//End Administration  Users
 		/*
 		*Routers Frontend
 		*/
